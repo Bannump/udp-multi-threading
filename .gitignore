@@ -25,3 +25,8 @@ __pycache__/
 *.pyc
 *.pyo
 
+# Local documentation (not for repository)
+GITHUB_AUTH.md
+GITHUB_SETUP.md
+PUSH_TO_GITHUB.sh
+

@@ -1,0 +1,27 @@
+# Compiled binaries
+server
+monitor
+*.o
+*.so
+*.a
+
+# Build artifacts
+*.exe
+*.dll
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+

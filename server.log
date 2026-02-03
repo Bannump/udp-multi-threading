@@ -1,0 +1,17 @@
+=== Secure Multi-Threaded UDP Packet Processor ===
+[Server] Shared memory initialized
+[Server] UDP socket bound to port 8080
+[Worker 1] Started
+[Worker 4] Started
+[Worker 3] Started
+[Listener] Started on port 8080
+[Worker 2] Started
+
+[Server] Received signal 15, shutting down...
+[Worker 2] Stopped
+[Worker 1] Stopped
+[Worker 4] Stopped
+[Worker 3] Stopped
+[Listener] Stopped
+[Server] Shared memory cleaned up
+[Server] Shutdown complete

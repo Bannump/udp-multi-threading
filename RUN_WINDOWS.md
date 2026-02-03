@@ -59,6 +59,8 @@ wsl -d Ubuntu -e bash -c "cd '/mnt/c/Users/sarat/OneDrive/Documents/self_learnin
 
 ## Troubleshooting
 
-- **Port 8080 in use:** In WSL run `sudo lsof -i :8080` then `kill <PID>`.
+- **Port 8080 in use:** In WSL run `sudo lsof -i :8080` (or `ss -tulnp | grep 8080`) to find the process, then `kill <PID>`.
 - **Stale shared memory:** In WSL run `sudo rm -f /dev/shm/telecom_shm`.
 - **`make` not found in WSL:** Install build-essential: `sudo apt update && sudo apt install -y build-essential`.
+- **`streamlit: command not found`:** Use the venv: `source .venv/bin/activate` then `pip install -r requirements-dashboard.txt` and `streamlit run dashboard.py`.
+- **pip "Invalid requirement" for a file:** Use `-r`: `pip install -r requirements-dashboard.txt`.

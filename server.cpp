@@ -18,6 +18,7 @@
 #include <sys/mman.h>
 #include <sys/stat.h>
 #include <signal.h>
+#include <ctime>
 
 #include "protocol.h"
 
@@ -76,8 +77,8 @@ void decrypt_payload(uint8_t* payload, size_t len) {
     }
 }
 
-// Process a single packet
-void process_packet(uint8_t* buffer, size_t bytes_received) {
+// Process a single packet (thread_id is 0..NUM_WORKER_THREADS-1 for thread_load[])
+void process_packet(uint8_t* buffer, size_t bytes_received, int thread_id) {
     // Buffer overflow protection
     if (bytes_received > MAX_BUFFER_SIZE) {
         std::cerr << "[Worker] Packet too large: " << bytes_received 
@@ -147,27 +148,30 @@ void process_packet(uint8_t* buffer, size_t bytes_received) {
     if (g_stats) {
         g_stats->packets_processed++;
         g_stats->bytes_transferred += bytes_received;
+        if (thread_id >= 0 && thread_id < 4) {
+            g_stats->thread_load[thread_id]++;
+        }
     }
     
     // Simulate processing work
     // In a real system, this would do actual packet processing
 }
 
-// Worker thread function
+// Worker thread function (thread_id 0..NUM_WORKER_THREADS-1)
 void worker_thread(int thread_id) {
-    std::cout << "[Worker " << thread_id << "] Started" << std::endl;
+    std::cout << "[Worker " << (thread_id + 1) << "] Started" << std::endl;
     
     while (g_running) {
         uint8_t* buffer = nullptr;
         size_t len = 0;
         
         if (pop_packet(buffer, len)) {
-            process_packet(buffer, len);
+            process_packet(buffer, len, thread_id);
             delete[] buffer;
         }
     }
     
-    std::cout << "[Worker " << thread_id << "] Stopped" << std::endl;
+    std::cout << "[Worker " << (thread_id + 1) << "] Stopped" << std::endl;
 }
 
 // Listener thread function (Producer)
@@ -232,6 +236,8 @@ bool setup_shared_memory() {
     
     // Initialize statistics
     memset(g_stats, 0, sizeof(SystemStats));
+    g_stats->is_running = true;
+    g_stats->start_time_sec = static_cast<uint64_t>(time(nullptr));
     
     std::cout << "[Server] Shared memory initialized" << std::endl;
     return true;
@@ -253,6 +259,7 @@ void cleanup_shared_memory() {
 void signal_handler(int sig) {
     std::cout << "\n[Server] Received signal " << sig << ", shutting down..." << std::endl;
     g_running = false;
+    if (g_stats) g_stats->is_running = false;
     g_queue_cv.notify_all();
 }
 
@@ -309,10 +316,10 @@ int main() {
         return 1;
     }
     
-    // Start worker threads
+    // Start worker threads (thread_id 0..3 for thread_load[] indexing)
     std::vector<std::thread> workers;
     for (int i = 0; i < NUM_WORKER_THREADS; i++) {
-        workers.emplace_back(worker_thread, i + 1);
+        workers.emplace_back(worker_thread, i);
     }
     
     // Start listener thread

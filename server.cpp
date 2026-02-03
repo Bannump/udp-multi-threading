@@ -99,11 +99,15 @@ void process_packet(uint8_t* buffer, size_t bytes_received) {
     }
     
     PacketHeader* header = reinterpret_cast<PacketHeader*>(buffer);
-    
+    // Client sends network byte order (big-endian); convert to host
+    uint32_t magic = ntohl(header->magic_word);
+    uint16_t payload_len = ntohs(header->payload_len);
+    uint32_t expected_checksum = ntohl(header->checksum);
+
     // Verify magic word
-    if (header->magic_word != 0xDEADBEEF) {
+    if (magic != 0xDEADBEEF) {
         std::cerr << "[Worker] Invalid magic word: 0x" 
-                  << std::hex << header->magic_word << std::dec << std::endl;
+                  << std::hex << magic << std::dec << std::endl;
         if (g_stats) {
             g_stats->dropped_packets++;
         }
@@ -111,7 +115,7 @@ void process_packet(uint8_t* buffer, size_t bytes_received) {
     }
     
     // Verify payload length
-    size_t expected_size = sizeof(PacketHeader) + header->payload_len;
+    size_t expected_size = sizeof(PacketHeader) + payload_len;
     if (bytes_received < expected_size) {
         std::cerr << "[Worker] Packet size mismatch. Expected: " 
                   << expected_size << ", received: " << bytes_received << std::endl;
@@ -121,11 +125,14 @@ void process_packet(uint8_t* buffer, size_t bytes_received) {
         return;
     }
     
-    // Verify checksum
-    uint32_t calculated_checksum = calculate_checksum(buffer, bytes_received - sizeof(uint32_t));
-    if (calculated_checksum != header->checksum) {
+    // Verify checksum (same as client: sum of bytes 0-7 and 12-end, skip checksum at 8-11)
+    uint32_t calculated_checksum = 0;
+    for (size_t i = 0; i < 8; i++) calculated_checksum += buffer[i];
+    for (size_t i = 12; i < bytes_received; i++) calculated_checksum += buffer[i];
+    calculated_checksum &= 0xFFFFFFFFu;
+    if (calculated_checksum != expected_checksum) {
         std::cerr << "[Worker] Checksum mismatch. Expected: " 
-                  << header->checksum << ", calculated: " << calculated_checksum << std::endl;
+                  << expected_checksum << ", calculated: " << calculated_checksum << std::endl;
         if (g_stats) {
             g_stats->dropped_packets++;
         }
@@ -134,7 +141,7 @@ void process_packet(uint8_t* buffer, size_t bytes_received) {
     
     // Decrypt payload
     uint8_t* payload = buffer + sizeof(PacketHeader);
-    decrypt_payload(payload, header->payload_len);
+    decrypt_payload(payload, payload_len);
     
     // Update statistics (thread-safe)
     if (g_stats) {

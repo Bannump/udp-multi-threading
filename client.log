@@ -1,0 +1,85 @@
+2026-02-02 19:06:48 [INFO] Starting packet generation:
+2026-02-02 19:06:48 [INFO]   Target: localhost:8080
+2026-02-02 19:06:48 [INFO]   Rate: 10000 packets/second
+2026-02-02 19:06:48 [INFO]   Payload size: 100 bytes
+2026-02-02 19:06:48 [INFO]   Duration: infinite
+2026-02-02 19:06:48 [INFO]   Press Ctrl+C to stop
+2026-02-02 19:06:50 [INFO] Sent: 10000 packets | Rate: 5279.5 pps | Time: 1.9s
+2026-02-02 19:06:52 [INFO] Sent: 20000 packets | Rate: 5323.3 pps | Time: 3.8s
+2026-02-02 19:06:54 [INFO] Sent: 30000 packets | Rate: 5341.6 pps | Time: 5.6s
+2026-02-02 19:06:56 [INFO] Sent: 40000 packets | Rate: 5360.7 pps | Time: 7.5s
+2026-02-02 19:06:57 [INFO] Sent: 50000 packets | Rate: 5372.1 pps | Time: 9.3s
+2026-02-02 19:06:59 [INFO] Sent: 60000 packets | Rate: 5373.0 pps | Time: 11.2s
+2026-02-02 19:07:00 [INFO] Statistics: Total sent=65536, Time=12.18s, Avg rate=5378.93 pps
+2026-02-02 19:08:36 [INFO] Starting packet generation:
+2026-02-02 19:08:36 [INFO]   Target: localhost:8080
+2026-02-02 19:08:36 [INFO]   Rate: 10000 packets/second
+2026-02-02 19:08:36 [INFO]   Payload size: 100 bytes
+2026-02-02 19:08:36 [INFO]   Duration: infinite
+2026-02-02 19:08:36 [INFO]   Press Ctrl+C to stop
+2026-02-02 19:08:38 [INFO] Sent: 10000 packets | Rate: 5405.5 pps | Time: 1.8s
+2026-02-02 19:08:39 [INFO] Sent: 20000 packets | Rate: 5389.6 pps | Time: 3.7s
+2026-02-02 19:08:41 [INFO] Sent: 30000 packets | Rate: 5391.7 pps | Time: 5.6s
+2026-02-02 19:08:43 [INFO] Sent: 40000 packets | Rate: 5382.3 pps | Time: 7.4s
+2026-02-02 19:08:45 [INFO] Sent: 50000 packets | Rate: 5382.1 pps | Time: 9.3s
+2026-02-02 19:08:47 [INFO] Sent: 60000 packets | Rate: 5386.3 pps | Time: 11.1s
+2026-02-02 19:08:49 [INFO] Sent: 70000 packets | Rate: 5382.7 pps | Time: 13.0s
+2026-02-02 19:08:51 [INFO] Sent: 80000 packets | Rate: 5366.7 pps | Time: 14.9s
+2026-02-02 19:08:53 [INFO] Sent: 90000 packets | Rate: 5368.0 pps | Time: 16.8s
+2026-02-02 19:08:54 [INFO] Sent: 100000 packets | Rate: 5365.9 pps | Time: 18.6s
+2026-02-02 19:08:56 [INFO] Sent: 110000 packets | Rate: 5373.7 pps | Time: 20.5s
+2026-02-02 19:08:57 [INFO] Sent: 120000 packets | Rate: 5551.8 pps | Time: 21.6s
+2026-02-02 19:08:59 [INFO] Stopping packet generation...
+2026-02-02 19:08:59 [INFO] Statistics: Total sent=126919, Time=22.90s, Avg rate=5543.52 pps
+2026-02-02 19:09:37 [INFO] Starting packet generation:
+2026-02-02 19:09:37 [INFO]   Target: localhost:8080
+2026-02-02 19:09:37 [INFO]   Rate: 10000 packets/second
+2026-02-02 19:09:37 [INFO]   Payload size: 100 bytes
+2026-02-02 19:09:37 [INFO]   Duration: 22.0 seconds
+2026-02-02 19:09:37 [INFO]   Press Ctrl+C to stop
+2026-02-02 19:09:39 [INFO] Sent: 10000 packets | Rate: 5355.7 pps | Time: 1.9s
+2026-02-02 19:09:41 [INFO] Sent: 20000 packets | Rate: 5321.2 pps | Time: 3.8s
+2026-02-02 19:09:43 [INFO] Sent: 30000 packets | Rate: 5311.4 pps | Time: 5.6s
+2026-02-02 19:09:45 [INFO] Sent: 40000 packets | Rate: 5318.0 pps | Time: 7.5s
+2026-02-02 19:09:47 [INFO] Sent: 50000 packets | Rate: 5331.8 pps | Time: 9.4s
+2026-02-02 19:09:48 [INFO] Sent: 60000 packets | Rate: 5343.9 pps | Time: 11.2s
+2026-02-02 19:09:50 [INFO] Sent: 70000 packets | Rate: 5344.1 pps | Time: 13.1s
+2026-02-02 19:09:52 [INFO] Sent: 80000 packets | Rate: 5351.0 pps | Time: 15.0s
+2026-02-02 19:09:54 [INFO] Sent: 90000 packets | Rate: 5357.6 pps | Time: 16.8s
+2026-02-02 19:09:56 [INFO] Sent: 100000 packets | Rate: 5361.7 pps | Time: 18.7s
+2026-02-02 19:09:58 [INFO] Sent: 110000 packets | Rate: 5362.8 pps | Time: 20.5s
+2026-02-02 19:09:59 [INFO] Statistics: Total sent=118044, Time=22.00s, Avg rate=5365.58 pps
+2026-02-02 19:10:20 [INFO] Starting packet generation:
+2026-02-02 19:10:20 [INFO]   Target: localhost:8080
+2026-02-02 19:10:20 [INFO]   Rate: 100000 packets/second
+2026-02-02 19:10:20 [INFO]   Payload size: 100 bytes
+2026-02-02 19:10:20 [INFO]   Duration: 22.0 seconds
+2026-02-02 19:10:20 [INFO]   Press Ctrl+C to stop
+2026-02-02 19:10:22 [INFO] Sent: 100000 packets | Rate: 48163.6 pps | Time: 2.1s
+2026-02-02 19:10:24 [INFO] Sent: 200000 packets | Rate: 48769.6 pps | Time: 4.1s
+2026-02-02 19:10:26 [INFO] Sent: 300000 packets | Rate: 48244.6 pps | Time: 6.2s
+2026-02-02 19:10:28 [INFO] Sent: 400000 packets | Rate: 48344.6 pps | Time: 8.3s
+2026-02-02 19:10:30 [INFO] Sent: 500000 packets | Rate: 48329.3 pps | Time: 10.3s
+2026-02-02 19:10:33 [INFO] Sent: 600000 packets | Rate: 48263.0 pps | Time: 12.4s
+2026-02-02 19:10:35 [INFO] Sent: 700000 packets | Rate: 48439.6 pps | Time: 14.5s
+2026-02-02 19:10:37 [INFO] Sent: 800000 packets | Rate: 48351.0 pps | Time: 16.5s
+2026-02-02 19:10:39 [INFO] Sent: 900000 packets | Rate: 48349.8 pps | Time: 18.6s
+2026-02-02 19:10:41 [INFO] Sent: 1000000 packets | Rate: 48325.0 pps | Time: 20.7s
+2026-02-02 19:10:42 [INFO] Statistics: Total sent=1064862, Time=22.00s, Avg rate=48402.80 pps
+2026-02-02 19:15:14 [INFO] Starting packet generation:
+2026-02-02 19:15:14 [INFO]   Target: localhost:8080
+2026-02-02 19:15:14 [INFO]   Rate: 100000 packets/second
+2026-02-02 19:15:14 [INFO]   Payload size: 100 bytes
+2026-02-02 19:15:14 [INFO]   Duration: 22.0 seconds
+2026-02-02 19:15:14 [INFO]   Press Ctrl+C to stop
+2026-02-02 19:15:16 [INFO] Sent: 100000 packets | Rate: 47389.5 pps | Time: 2.1s
+2026-02-02 19:15:18 [INFO] Sent: 200000 packets | Rate: 47405.3 pps | Time: 4.2s
+2026-02-02 19:15:20 [INFO] Sent: 300000 packets | Rate: 48152.0 pps | Time: 6.2s
+2026-02-02 19:15:22 [INFO] Sent: 400000 packets | Rate: 48609.7 pps | Time: 8.2s
+2026-02-02 19:15:24 [INFO] Sent: 500000 packets | Rate: 48429.5 pps | Time: 10.3s
+2026-02-02 19:15:26 [INFO] Sent: 600000 packets | Rate: 48434.5 pps | Time: 12.4s
+2026-02-02 19:15:28 [INFO] Sent: 700000 packets | Rate: 48410.8 pps | Time: 14.5s
+2026-02-02 19:15:30 [INFO] Sent: 800000 packets | Rate: 48448.0 pps | Time: 16.5s
+2026-02-02 19:15:32 [INFO] Sent: 900000 packets | Rate: 48390.0 pps | Time: 18.6s
+2026-02-02 19:15:34 [INFO] Sent: 1000000 packets | Rate: 48353.0 pps | Time: 20.7s
+2026-02-02 19:15:36 [INFO] Statistics: Total sent=1065222, Time=22.00s, Avg rate=48419.16 pps

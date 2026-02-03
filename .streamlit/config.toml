@@ -1,0 +1,6 @@
+# Faster dashboard load: disable file watcher (restart manually after editing dashboard.py)
+[server]
+fileWatcherType = "none"
+
+[browser]
+gatherUsageStats = false

@@ -109,6 +109,32 @@ python3 client.py --rate 2000 --duration 30
 --payload-size BYTES Payload size in bytes (default: 100)
 ```
 
+### 4. ASE Traffic Control Plane (Streamlit Dashboard)
+
+An SRE-style monitoring and control dashboard for the UDP packet processor. Run it in **WSL** (same environment as the server) so it can read shared memory and control the server.
+
+On Ubuntu/WSL, use a virtual environment (system Python is externally managed):
+
+```bash
+# One-time setup (in WSL, from project directory)
+python3 -m venv .venv
+source .venv/bin/activate
+pip install -r requirements-dashboard.txt   # -r required for requirements files
+
+# Run the dashboard (activate venv first if needed)
+source .venv/bin/activate
+streamlit run dashboard.py
+```
+
+The dashboard provides:
+
+- **Real-time metrics** from shared memory: total/dropped packets, uptime, status (heartbeat)
+- **Worker thread load** bar chart (per-thread packet counts for load-balancing visibility)
+- **Control panel**: Start Server / Stop Server (subprocess), Traffic Generator (Packets/sec slider + Inject Traffic)
+- **Server log** tail (last 20 lines of `server.log`) for magic-word and checksum validation
+
+When you click **Start Server**, the server runs in the background and writes to `server.log`. Use **Inject Traffic** to run `client.py` at the selected rate for 15 seconds.
+
 ## Demonstration Scenarios
 
 ### A. Throughput and Latency Testing

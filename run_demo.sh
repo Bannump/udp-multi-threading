@@ -51,4 +51,3 @@ wait $SERVER_PID 2>/dev/null
 wait $MONITOR_PID 2>/dev/null
 
 echo "Demo complete!"
-

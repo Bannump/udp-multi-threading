@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UDP Multi-Threading – Secure Packet Processor</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Outfit:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0d1117;
+      --surface: #161b22;
+      --border: #30363d;
+      --text: #e6edf3;
+      --muted: #8b949e;
+      --accent: #58a6ff;
+      --accent-dim: #388bfd33;
+      --green: #3fb950;
+      --green-dim: #23863633;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: 'Outfit', system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+    .wrap { max-width: 720px; margin: 0 auto; padding: 2rem 1.5rem; }
+    h1 {
+      font-size: 1.75rem;
+      font-weight: 700;
+      margin: 0 0 0.5rem;
+      letter-spacing: -0.02em;
+    }
+    .tagline { color: var(--muted); margin: 0 0 2rem; font-size: 1rem; }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    section {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+    section h2 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin: 0 0 0.75rem;
+      color: var(--text);
+    }
+    p { margin: 0 0 0.75rem; color: var(--muted); font-size: 0.95rem; }
+    p:last-child { margin-bottom: 0; }
+    .tech-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.9rem;
+    }
+    .tech-table th, .tech-table td {
+      text-align: left;
+      padding: 0.5rem 0.75rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .tech-table th { color: var(--muted); font-weight: 600; }
+    .tech-table tr:last-child td { border-bottom: none; }
+    .demo-box {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1rem 1.25rem;
+      margin-top: 0.75rem;
+    }
+    .demo-status {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-weight: 600;
+      font-size: 0.95rem;
+      margin-bottom: 0.5rem;
+    }
+    .demo-status .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--muted);
+    }
+    .demo-status.online .dot { background: var(--green); box-shadow: 0 0 8px var(--green); }
+    .demo-status .label { color: var(--muted); }
+    .demo-status.online .label { color: var(--green); }
+    .demo-addr {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.9rem;
+      color: var(--accent);
+      word-break: break-all;
+    }
+    .demo-cmd {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.85rem;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 0.75rem 1rem;
+      margin-top: 0.75rem;
+      color: var(--text);
+      overflow-x: auto;
+    }
+    .btn {
+      display: inline-block;
+      background: var(--accent);
+      color: var(--bg);
+      font-weight: 600;
+      font-size: 0.9rem;
+      padding: 0.6rem 1.2rem;
+      border-radius: 8px;
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
+      margin-top: 0.5rem;
+    }
+    .btn:hover { filter: brightness(1.1); }
+    .btn-gh { background: var(--surface); color: var(--text); border: 1px solid var(--border); }
+    footer { margin-top: 2rem; padding-top: 1rem; border-top: 1px solid var(--border); color: var(--muted); font-size: 0.85rem; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>UDP Multi-Threading</h1>
+    <p class="tagline">Secure multi-threaded UDP packet processor with IPC monitoring — high-performance telecom-style component.</p>
+
+    <section>
+      <h2>Overview</h2>
+      <p>This project simulates a production-style network packet processor: a multi-threaded UDP server that receives encrypted custom packets, processes them with a thread pool, and reports statistics to a separate process via shared memory (IPC).</p>
+      <p><strong>Components:</strong> C++ server (UDP + worker threads), monitor (shared-memory stats), Python client (encrypted packet generator), and an optional Streamlit dashboard.</p>
+    </section>
+
+    <section>
+      <h2>Technology</h2>
+      <table class="tech-table">
+        <tr><th>Area</th><th>Stack</th></tr>
+        <tr><td>Networking</td><td>POSIX Sockets (UDP)</td></tr>
+        <tr><td>Concurrency</td><td>C++11 threads, mutex, condition_variable</td></tr>
+        <tr><td>IPC</td><td>POSIX Shared Memory</td></tr>
+        <tr><td>Protocol</td><td>Packed binary header + XOR encryption</td></tr>
+        <tr><td>Build</td><td>Make</td></tr>
+      </table>
+    </section>
+
+    <section>
+      <h2>Live demo</h2>
+      <p><strong>Only the project author can start the server.</strong> When the demo server is running, you can test it from your machine using the client from the repo.</p>
+      <div class="demo-box">
+        <div id="demo-status" class="demo-status">
+          <span class="dot"></span>
+          <span class="label">Demo server: offline</span>
+        </div>
+        <div id="demo-addr" class="demo-addr" style="display: none;"></div>
+        <div id="demo-cmd" class="demo-cmd" style="display: none;"></div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Get the code</h2>
+      <p>Clone the repo, build the server and monitor, and run the client when the demo is online (see connection details above).</p>
+      <a href="https://github.com/Bannump/udp-multi-threading" class="btn btn-gh" target="_blank" rel="noopener">View on GitHub →</a>
+    </section>
+
+    <footer>
+      Demonstration project for portfolio and learning. Server is started only by the author; when it is running, the connection info appears in the Live demo section.
+    </footer>
+  </div>
+
+  <script>
+    (function () {
+      var base = window.location.pathname.replace(/\/$/, '') || '/';
+      var configUrl = base + (base.endsWith('/') ? '' : '/') + 'demo-config.json';
+      fetch(configUrl)
+        .then(function (r) { return r.json(); })
+        .then(function (c) {
+          var statusEl = document.getElementById('demo-status');
+          var addrEl = document.getElementById('demo-addr');
+          var cmdEl = document.getElementById('demo-cmd');
+          if (c.demo_online && c.host) {
+            statusEl.classList.add('online');
+            statusEl.querySelector('.label').textContent = 'Demo server: online';
+            addrEl.textContent = c.host + (c.port ? ':' + c.port : '');
+            addrEl.style.display = 'block';
+            cmdEl.textContent = 'python3 client.py --host ' + c.host + (c.port ? ' --port ' + c.port : '') + ' --rate 1000 --duration 15';
+            cmdEl.style.display = 'block';
+          }
+        })
+        .catch(function () {});
+    })();
+  </script>
+</body>
+</html>

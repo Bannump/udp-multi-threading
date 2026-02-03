@@ -1,0 +1,6 @@
+{
+  "demo_online": false,
+  "host": "",
+  "port": 8080,
+  "note": "Only the project author can start the server. When the demo is running, connection details appear here."
+}

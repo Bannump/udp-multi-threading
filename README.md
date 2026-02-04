@@ -6,9 +6,11 @@ A high-performance telecom component simulation that demonstrates networking, mu
 
 This project simulates a production-grade network packet processor with the following components:
 
-1. **Server** (`server.cpp`): Multi-threaded UDP server that receives, decrypts, and processes encrypted packets
-2. **Monitor** (`monitor.cpp`): Separate process that displays real-time statistics via shared memory IPC
+1. **Server** (`server.cpp` or Go in `go/server/`): Multi-threaded UDP server that receives, decrypts, and processes encrypted packets
+2. **Monitor** (`monitor.cpp` or Go in `go/monitor/`): Separate process that displays real-time statistics via shared memory IPC
 3. **Client** (`client.py`): Python script that generates encrypted UDP packets for testing
+
+A **Go implementation** is available in the `go/` directory with the same protocol and behavior; you can switch between C++ and Go without changing the client. See `go/README.md`.
 
 ## Architecture
 

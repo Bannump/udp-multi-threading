@@ -83,3 +83,66 @@
 2026-02-02 19:15:32 [INFO] Sent: 900000 packets | Rate: 48390.0 pps | Time: 18.6s
 2026-02-02 19:15:34 [INFO] Sent: 1000000 packets | Rate: 48353.0 pps | Time: 20.7s
 2026-02-02 19:15:36 [INFO] Statistics: Total sent=1065222, Time=22.00s, Avg rate=48419.16 pps
+2026-02-03 14:20:20 [INFO] Starting packet generation:
+2026-02-03 14:20:20 [INFO]   Target: localhost:8080
+2026-02-03 14:20:20 [INFO]   Rate: 1000 packets/second
+2026-02-03 14:20:20 [INFO]   Payload size: 100 bytes
+2026-02-03 14:20:20 [INFO]   Duration: infinite
+2026-02-03 14:20:20 [INFO]   Press Ctrl+C to stop
+2026-02-03 14:20:21 [INFO] Sent: 1000 packets | Rate: 853.8 pps | Time: 1.2s
+2026-02-03 14:20:22 [INFO] Sent: 2000 packets | Rate: 852.5 pps | Time: 2.3s
+2026-02-03 14:20:23 [INFO] Sent: 3000 packets | Rate: 850.7 pps | Time: 3.5s
+2026-02-03 14:20:24 [INFO] Sent: 4000 packets | Rate: 849.6 pps | Time: 4.7s
+2026-02-03 14:20:26 [INFO] Sent: 5000 packets | Rate: 849.3 pps | Time: 5.9s
+2026-02-03 14:20:27 [INFO] Sent: 6000 packets | Rate: 849.5 pps | Time: 7.1s
+2026-02-03 14:20:28 [INFO] Sent: 7000 packets | Rate: 849.7 pps | Time: 8.2s
+2026-02-03 14:20:29 [INFO] Sent: 8000 packets | Rate: 850.0 pps | Time: 9.4s
+2026-02-03 14:20:30 [INFO] Sent: 9000 packets | Rate: 850.3 pps | Time: 10.6s
+2026-02-03 14:20:31 [INFO] Sent: 10000 packets | Rate: 850.7 pps | Time: 11.8s
+2026-02-03 14:20:33 [INFO] Sent: 11000 packets | Rate: 850.9 pps | Time: 12.9s
+2026-02-03 14:20:34 [INFO] Sent: 12000 packets | Rate: 851.0 pps | Time: 14.1s
+2026-02-03 14:20:35 [INFO] Sent: 13000 packets | Rate: 851.1 pps | Time: 15.3s
+2026-02-03 14:20:36 [INFO] Sent: 14000 packets | Rate: 851.2 pps | Time: 16.4s
+2026-02-03 14:20:37 [INFO] Sent: 15000 packets | Rate: 851.2 pps | Time: 17.6s
+2026-02-03 14:20:39 [INFO] Sent: 16000 packets | Rate: 851.0 pps | Time: 18.8s
+2026-02-03 14:20:40 [INFO] Sent: 17000 packets | Rate: 851.0 pps | Time: 20.0s
+2026-02-03 14:20:41 [INFO] Sent: 18000 packets | Rate: 851.2 pps | Time: 21.1s
+2026-02-03 14:20:42 [INFO] Sent: 19000 packets | Rate: 851.2 pps | Time: 22.3s
+2026-02-03 14:20:43 [INFO] Sent: 20000 packets | Rate: 851.3 pps | Time: 23.5s
+2026-02-03 14:20:44 [INFO] Sent: 21000 packets | Rate: 851.4 pps | Time: 24.7s
+2026-02-03 14:20:46 [INFO] Sent: 22000 packets | Rate: 852.5 pps | Time: 25.8s
+2026-02-03 14:20:47 [INFO] Sent: 23000 packets | Rate: 852.5 pps | Time: 27.0s
+2026-02-03 14:20:45 [INFO] Sent: 24000 packets | Rate: 933.9 pps | Time: 25.7s
+2026-02-03 14:20:47 [INFO] Sent: 25000 packets | Rate: 930.3 pps | Time: 26.9s
+2026-02-03 14:20:48 [INFO] Sent: 26000 packets | Rate: 927.0 pps | Time: 28.0s
+2026-02-03 14:20:49 [INFO] Sent: 27000 packets | Rate: 923.8 pps | Time: 29.2s
+2026-02-03 14:20:49 [INFO] Stopping packet generation...
+2026-02-03 14:20:49 [INFO] Statistics: Total sent=27271, Time=29.54s, Avg rate=923.06 pps
+2026-02-03 14:21:00 [INFO] Starting packet generation:
+2026-02-03 14:21:00 [INFO]   Target: localhost:8080
+2026-02-03 14:21:00 [INFO]   Rate: 10000 packets/second
+2026-02-03 14:21:00 [INFO]   Payload size: 100 bytes
+2026-02-03 14:21:00 [INFO]   Duration: 10.0 seconds
+2026-02-03 14:21:00 [INFO]   Press Ctrl+C to stop
+2026-02-03 14:21:02 [INFO] Sent: 10000 packets | Rate: 5313.9 pps | Time: 1.9s
+2026-02-03 14:21:04 [INFO] Sent: 20000 packets | Rate: 5192.1 pps | Time: 3.9s
+2026-02-03 14:21:06 [INFO] Sent: 30000 packets | Rate: 5160.9 pps | Time: 5.8s
+2026-02-03 14:21:08 [INFO] Sent: 40000 packets | Rate: 5148.3 pps | Time: 7.8s
+2026-02-03 14:21:10 [INFO] Sent: 50000 packets | Rate: 5157.4 pps | Time: 9.7s
+2026-02-03 14:21:10 [INFO] Statistics: Total sent=51645, Time=10.00s, Avg rate=5164.41 pps
+2026-02-04 16:44:26 [INFO] Starting packet generation:
+2026-02-04 16:44:26 [INFO]   Target: localhost:8080
+2026-02-04 16:44:26 [INFO]   Rate: 1000 packets/second
+2026-02-04 16:44:26 [INFO]   Payload size: 100 bytes
+2026-02-04 16:44:26 [INFO]   Duration: infinite
+2026-02-04 16:44:26 [INFO]   Press Ctrl+C to stop
+2026-02-04 16:44:27 [INFO] Sent: 1000 packets | Rate: 852.7 pps | Time: 1.2s
+2026-02-04 16:44:26 [INFO] Sent: 2000 packets | Rate: 9269.7 pps | Time: 0.2s
+2026-02-04 16:44:27 [INFO] Sent: 3000 packets | Rate: 2164.3 pps | Time: 1.4s
+2026-02-04 16:44:29 [INFO] Sent: 4000 packets | Rate: 1564.1 pps | Time: 2.6s
+2026-02-04 16:44:30 [INFO] Sent: 5000 packets | Rate: 1341.2 pps | Time: 3.7s
+2026-02-04 16:44:31 [INFO] Sent: 6000 packets | Rate: 1233.4 pps | Time: 4.9s
+2026-02-04 16:44:32 [INFO] Sent: 7000 packets | Rate: 1161.1 pps | Time: 6.0s
+2026-02-04 16:44:33 [INFO] Sent: 8000 packets | Rate: 1112.1 pps | Time: 7.2s
+2026-02-04 16:44:34 [INFO] Stopping packet generation...
+2026-02-04 16:44:34 [INFO] Statistics: Total sent=8659, Time=7.95s, Avg rate=1088.58 pps

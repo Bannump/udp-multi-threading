@@ -4,6 +4,7 @@ UDP Packet Generator Client
 Generates encrypted UDP packets matching the custom protocol
 """
 
+import random
 import socket
 import struct
 import time
@@ -22,10 +23,12 @@ logging.basicConfig(
 )
 logger = logging.getLogger(__name__)
 
-# Protocol constants (must match protocol.h)
+# Protocol constants (must match protocol.h and server MAX_BUFFER_SIZE)
 MAGIC_WORD = 0xDEADBEEF
 UDP_PORT = 8080
 ENCRYPTION_KEY = 0xAA  # XOR key (must match server)
+MAX_BUFFER_SIZE = 4096  # server limit
+PACKET_HEADER_SIZE = 12
 
 def calculate_checksum(data):
     """Calculate simple checksum (sum of all bytes)"""
@@ -63,9 +66,64 @@ def create_packet(seq_num, payload_data):
     
     return packet
 
-def send_packets(host='localhost', port=8080, rate=1000, duration=None, payload_size=100):
+
+def create_invalid_packet(seq_num, payload_data, kind):
     """
-    Send UDP packets at specified rate
+    Create a packet that the server will reject (for testing drop handling).
+    kind: 'magic' | 'checksum' | 'too_small' | 'too_large' | 'size_mismatch'
+    No extra work vs create_packet — preserves p99 latency.
+    """
+    seq_16 = seq_num & 0xFFFF
+    encrypted = encrypt_payload(payload_data, ENCRYPTION_KEY)
+    payload_len = len(encrypted)
+
+    if kind == "magic":
+        bad_magic = 0xDEADBEE0  # wrong magic
+        packet = struct.pack(">I H H", bad_magic, seq_16, payload_len)
+        packet += b"\x00\x00\x00\x00"  # wrong checksum
+        packet += encrypted
+        return packet
+
+    if kind == "checksum":
+        packet = struct.pack(">I H H", MAGIC_WORD, seq_16, payload_len)
+        packet += encrypted
+        bad_checksum = (calculate_checksum(packet) + 1) & 0xFFFFFFFF
+        return struct.pack(">I H H I", MAGIC_WORD, seq_16, payload_len, bad_checksum) + encrypted
+
+    if kind == "too_small":
+        # Less than sizeof(PacketHeader)=12 bytes
+        return struct.pack(">I H", MAGIC_WORD, seq_16)[:8]
+
+    if kind == "too_large":
+        # Exceeds server MAX_BUFFER_SIZE (4096)
+        big_payload = bytes([0xAA] * (MAX_BUFFER_SIZE - PACKET_HEADER_SIZE + 1))
+        enc_big = encrypt_payload(big_payload, ENCRYPTION_KEY)
+        plen = len(enc_big)
+        packet = struct.pack(">I H H", MAGIC_WORD, seq_16, plen)
+        packet += enc_big
+        cs = calculate_checksum(packet)
+        return struct.pack(">I H H I", MAGIC_WORD, seq_16, plen, cs) + enc_big
+
+    if kind == "size_mismatch":
+        # Header says payload_len=100 but send only 50 bytes
+        declared_len = 100
+        short_payload = encrypted[:50] if len(encrypted) >= 50 else encrypted
+        packet = struct.pack(">I H H", MAGIC_WORD, seq_16, declared_len)
+        packet += short_payload
+        cs = calculate_checksum(packet)
+        return struct.pack(">I H H I", MAGIC_WORD, seq_16, declared_len, cs) + short_payload
+
+    return create_packet(seq_num, payload_data)
+
+
+# Invalid packet kinds for random drop injection (matches server drop reasons)
+INVALID_KINDS = ("magic", "checksum", "too_small", "too_large", "size_mismatch")
+
+
+def send_packets(host='localhost', port=8080, rate=1000, duration=None, payload_size=100, invalid_fraction=0.0):
+    """
+    Send UDP packets at specified rate.
+    Optionally inject invalid packets (invalid_fraction) that the server will drop; no extra latency.
     
     Args:
         host: Target host
@@ -73,46 +131,57 @@ def send_packets(host='localhost', port=8080, rate=1000, duration=None, payload_
         rate: Packets per second
         duration: Duration in seconds (None = infinite)
         payload_size: Size of payload in bytes
+        invalid_fraction: Fraction of packets to send as invalid (0.0–1.0); server will drop them. Keeps p99 low.
     """
     sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-    
+
     # Create a sample payload
     payload = b'X' * payload_size
-    
+
     seq_num = 0
     packet_count = 0
+    invalid_count = 0
     start_time = time.time()
     interval = 1.0 / rate
-    
+
     logger.info("Starting packet generation:")
     logger.info("  Target: %s:%s", host, port)
     logger.info("  Rate: %s packets/second", rate)
     logger.info("  Payload size: %s bytes", payload_size)
     logger.info("  Duration: %s", 'infinite' if duration is None else f'{duration} seconds')
+    if invalid_fraction > 0:
+        logger.info("  Invalid (drop) fraction: %.2f%% (magic/checksum/size)", invalid_fraction * 100)
     logger.info("  Press Ctrl+C to stop")
-    
+
     try:
         while True:
             packet_start = time.time()
-            
-            # Create and send packet
-            packet = create_packet(seq_num, payload)
+
+            # With small probability send an invalid packet (server will drop); no extra latency
+            if invalid_fraction > 0 and random.random() < invalid_fraction:
+                kind = random.choice(INVALID_KINDS)
+                packet = create_invalid_packet(seq_num, payload, kind)
+                invalid_count += 1
+            else:
+                packet = create_packet(seq_num, payload)
             sock.sendto(packet, (host, port))
-            
+
             seq_num += 1
             packet_count += 1
-            
-            # Rate limiting
+
+            # Rate limiting (unchanged — same one packet per iteration, good p99)
             elapsed = time.time() - packet_start
             sleep_time = max(0, interval - elapsed)
             if sleep_time > 0:
                 time.sleep(sleep_time)
-            
+
             # Log statistics every second
-            if packet_count % rate == 0:
+            if packet_count % max(1, rate) == 0:
                 elapsed_total = time.time() - start_time
                 actual_rate = packet_count / elapsed_total if elapsed_total > 0 else 0
                 msg = f"Sent: {packet_count} packets | Rate: {actual_rate:.1f} pps | Time: {elapsed_total:.1f}s"
+                if invalid_count > 0:
+                    msg += f" | Invalid (drop): {invalid_count}"
                 logger.info(msg)
                 print(f"\r{msg}", end='', flush=True)
             
@@ -126,10 +195,12 @@ def send_packets(host='localhost', port=8080, rate=1000, duration=None, payload_
     finally:
         elapsed_total = time.time() - start_time
         avg_rate = packet_count / elapsed_total if elapsed_total > 0 else 0
-        logger.info("Statistics: Total sent=%s, Time=%.2fs, Avg rate=%.2f pps",
-                   packet_count, elapsed_total, avg_rate)
+        logger.info("Statistics: Total sent=%s, Invalid (drop)=%s, Time=%.2fs, Avg rate=%.2f pps",
+                   packet_count, invalid_count, elapsed_total, avg_rate)
         print(f"\n\nStatistics:")
         print(f"  Total packets sent: {packet_count}")
+        if invalid_count > 0:
+            print(f"  Invalid (drop) packets: {invalid_count}")
         print(f"  Total time: {elapsed_total:.2f} seconds")
         print(f"  Average rate: {avg_rate:.2f} packets/second")
         sock.close()
@@ -148,6 +219,8 @@ def main():
                        help='Duration in seconds (default: infinite)')
     parser.add_argument('--payload-size', type=int, default=100,
                        help='Payload size in bytes (default: 100)')
+    parser.add_argument('--invalid-fraction', type=float, default=0.0,
+                       help='Fraction of packets to send as invalid (server drops them); 0=off (default), e.g. 0.01=1%%')
     
     args = parser.parse_args()
     
@@ -156,7 +229,8 @@ def main():
         port=args.port,
         rate=args.rate,
         duration=args.duration,
-        payload_size=args.payload_size
+        payload_size=args.payload_size,
+        invalid_fraction=max(0.0, min(1.0, args.invalid_fraction)),
     )
 
 if __name__ == '__main__':

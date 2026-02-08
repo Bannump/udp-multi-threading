@@ -157,6 +157,63 @@ def parse_drop_reason_and_details(line):
     return (reason, details)
 
 
+def parse_client_send_stats(log_path):
+    """
+    Parse client.log for last run statistics: total sent, invalid count, valid/invalid %,
+    and INVALID_BREAKDOWN (per-type counts). Returns None if not found or invalid.
+    """
+    path = Path(log_path)
+    if not path.exists():
+        return None
+    try:
+        with open(path, "rb") as f:
+            f.seek(max(0, path.stat().st_size - 64 * 1024))
+            raw = f.read()
+        text = raw.decode("utf-8", errors="replace")
+        lines = text.splitlines()
+    except Exception:
+        return None
+    total_sent = None
+    invalid_count = None
+    breakdown = {}  # kind -> count
+    for line in reversed(lines):
+        m = re.search(r"Statistics:\s*Total sent=(\d+),\s*Invalid \(drop\)=(\d+)", line)
+        if m and total_sent is None:
+            total_sent = int(m.group(1))
+            invalid_count = int(m.group(2))
+        mb = re.search(r"INVALID_BREAKDOWN\s+(.+)", line)
+        if mb:
+            # Parse "magic_word=20 checksum=62 too_small=15 too_large=10 size_mismatch=17"
+            for part in mb.group(1).strip().split():
+                kv = part.split("=")
+                if len(kv) == 2 and kv[1].isdigit():
+                    breakdown[kv[0]] = int(kv[1])
+            break
+    if total_sent is None or total_sent == 0:
+        return None
+    valid_count = total_sent - (invalid_count or 0)
+    valid_pct = 100 * valid_count / total_sent
+    invalid_pct = 100 * (invalid_count or 0) / total_sent
+    return {
+        "total_sent": total_sent,
+        "valid_count": valid_count,
+        "invalid_count": invalid_count or 0,
+        "valid_pct": valid_pct,
+        "invalid_pct": invalid_pct,
+        "breakdown": breakdown,
+    }
+
+
+# Display names for invalid types (must match client.py INVALID_DISPLAY_NAMES)
+CLIENT_INVALID_DISPLAY_NAMES = {
+    "magic": "Magic word",
+    "checksum": "Checksum",
+    "too_small": "Too small",
+    "too_large": "Too large",
+    "size_mismatch": "Size mismatch",
+}
+
+
 def tail_log(path, lines=20, max_bytes=256 * 1024):
     """Last N lines of a file. Reads from end only (fast for large logs)."""
     path = Path(path)
@@ -561,6 +618,38 @@ def live_metrics_and_log():
             f'</div></div>',
             unsafe_allow_html=True,
         )
+
+    # --- Client send statistics (last run, from client.log) ---
+    client_stats = parse_client_send_stats(CLIENT_LOG)
+    if client_stats:
+        st.markdown("#### Client send statistics (last run)")
+        total = client_stats["total_sent"]
+        valid = client_stats["valid_count"]
+        invalid = client_stats["invalid_count"]
+        valid_pct = client_stats["valid_pct"]
+        invalid_pct = client_stats["invalid_pct"]
+        breakdown = client_stats["breakdown"]
+        st.markdown(
+            f'<div class="metric-card">'
+            f'<div class="metric-label">Total sent</div><div class="metric-value">{total:,}</div>'
+            f'<div style="margin-top:0.5rem;">'
+            f'<span style="color:#30d158;">Valid (good): {valid:,} ({valid_pct:.2f}%)</span> &nbsp; '
+            f'<span style="color:#ff9f0a;">Invalid (drop): {invalid:,} ({invalid_pct:.2f}%)</span>'
+            f'</div>',
+            unsafe_allow_html=True,
+        )
+        if invalid > 0 and breakdown:
+            st.markdown('<p class="section-label">Invalid breakdown (% of total invalid, count/total invalid)</p>', unsafe_allow_html=True)
+            lines_html = []
+            for kind in ("magic", "checksum", "too_small", "too_large", "size_mismatch"):
+                n = breakdown.get(kind, 0)
+                pct_invalid = 100 * n / invalid
+                label = CLIENT_INVALID_DISPLAY_NAMES.get(kind, kind)
+                lines_html.append(
+                    f'<div style="font-size:0.9rem;color:#a1a1a6;margin-bottom:0.2rem;">'
+                    f'{label}: {pct_invalid:.1f}% of invalid ({n}/{invalid})</div>'
+                )
+            st.markdown('<div class="sparkline-wrap">' + "".join(lines_html) + '</div>', unsafe_allow_html=True)
 
     # --- Log filters: cutoff for time range (seconds ago); None = All ---
     time_cutoff_sec = {"Last 1h": 3600, "Last 6h": 21600, "Last 24h": 86400, "Last 48h": 172800}.get(

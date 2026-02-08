@@ -6,133 +6,355 @@
 [Worker 3] Started
 [Worker 4] Started
 [Listener] Started on port 8080
-[2026-02-08T19:29:27.691Z] [Worker] Packet too small: 6 bytes (min: 12)
-[2026-02-08T19:29:27.728Z] [Worker] Packet size mismatch. Expected: 112, received: 62
-[2026-02-08T19:29:27.814Z] [Worker] Packet too small: 6 bytes (min: 12)
-[2026-02-08T19:29:27.957Z] [Worker] Packet size mismatch. Expected: 112, received: 62
-[2026-02-08T19:29:28.166Z] [Worker] Checksum mismatch. Expected: 25274, calculated: 25273
-[2026-02-08T19:29:28.346Z] [Worker] Packet size mismatch. Expected: 112, received: 62
-[2026-02-08T19:29:28.423Z] [Worker] Packet size mismatch. Expected: 112, received: 62
-[2026-02-08T19:29:28.499Z] [Worker] Invalid magic word: 0xdeadbee0
-[2026-02-08T19:29:28.780Z] [Worker] Checksum mismatch. Expected: 25251, calculated: 25250
-[2026-02-08T19:29:28.809Z] [Worker] Packet size mismatch. Expected: 112, received: 62
-[2026-02-08T19:29:28.956Z] [Worker] Invalid magic word: 0xdeadbee0
-[2026-02-08T19:29:28.959Z] [Worker] Packet size mismatch. Expected: 112, received: 62
-[2026-02-08T19:29:29.061Z] [Worker] Packet too small: 6 bytes (min: 12)
-[2026-02-08T19:29:29.260Z] [Worker] Packet size mismatch. Expected: 4097, received: 4096
-[2026-02-08T19:29:29.273Z] [Worker] Packet too small: 6 bytes (min: 12)
-[2026-02-08T19:29:29.350Z] [Worker] Packet size mismatch. Expected: 4097, received: 4096
-[2026-02-08T19:29:29.550Z] [Worker] Packet size mismatch. Expected: 4097, received: 4096
-[2026-02-08T19:29:29.571Z] [Worker] Packet size mismatch. Expected: 4097, received: 4096
-[2026-02-08T19:29:29.641Z] [Worker] Checksum mismatch. Expected: 25388, calculated: 25387
-[2026-02-08T19:29:29.848Z] [Worker] Packet too small: 6 bytes (min: 12)
-[2026-02-08T19:29:29.882Z] [Worker] Packet size mismatch. Expected: 4097, received: 4096
-[2026-02-08T19:29:29.912Z] [Worker] Checksum mismatch. Expected: 25316, calculated: 25315
-[2026-02-08T19:29:30.061Z] [Worker] Checksum mismatch. Expected: 25303, calculated: 25302
-[2026-02-08T19:29:30.070Z] [Worker] Invalid magic word: 0xdeadbee0
-[2026-02-08T19:29:30.208Z] [Worker] Checksum mismatch. Expected: 25288, calculated: 25287
-[2026-02-08T19:29:30.232Z] [Worker] Checksum mismatch. Expected: 25327, calculated: 25326
-[2026-02-08T19:29:30.496Z] [Worker] Invalid magic word: 0xdeadbee0
-[2026-02-08T19:29:30.628Z] [Worker] Packet size mismatch. Expected: 112, received: 62
-[2026-02-08T19:29:31.025Z] [Worker] Packet size mismatch. Expected: 112, received: 62
-[2026-02-08T19:29:31.070Z] [Worker] Packet too small: 6 bytes (min: 12)
-[2026-02-08T19:29:31.102Z] [Worker] Packet size mismatch. Expected: 112, received: 62
-[2026-02-08T19:29:31.499Z] [Worker] Checksum mismatch. Expected: 25351, calculated: 25350
-[2026-02-08T19:29:31.549Z] [Worker] Packet too small: 6 bytes (min: 12)
-[2026-02-08T19:29:31.572Z] [Worker] Packet size mismatch. Expected: 112, received: 62
-[2026-02-08T19:29:31.765Z] [Worker] Checksum mismatch. Expected: 25271, calculated: 25270
-[2026-02-08T19:29:31.864Z] [Worker] Invalid magic word: 0xdeadbee0
-[2026-02-08T19:29:32.119Z] [Worker] Checksum mismatch. Expected: 25341, calculated: 25340
-[2026-02-08T19:29:32.129Z] [Worker] Checksum mismatch. Expected: 25357, calculated: 25356
-[2026-02-08T19:29:32.176Z] [Worker] Invalid magic word: 0xdeadbee0
-[2026-02-08T19:29:32.182Z] [Worker] Packet size mismatch. Expected: 112, received: 62
-[2026-02-08T19:29:32.183Z] [Worker] Packet too small: 6 bytes (min: 12)
-[2026-02-08T19:29:32.406Z] [Worker] Packet size mismatch. Expected: 112, received: 62
-[2026-02-08T19:29:32.427Z] [Worker] Packet size mismatch. Expected: 4097, received: 4096
-[2026-02-08T19:29:32.472Z] [Worker] Invalid magic word: 0xdeadbee0
-[2026-02-08T19:29:32.525Z] [Worker] Packet too small: 6 bytes (min: 12)
-[2026-02-08T19:29:32.761Z] [Worker] Packet size mismatch. Expected: 4097, received: 4096
-[2026-02-08T19:29:32.864Z] [Worker] Packet too small: 6 bytes (min: 12)
-[2026-02-08T19:29:33.048Z] [Worker] Packet size mismatch. Expected: 4097, received: 4096
-[2026-02-08T19:29:33.199Z] [Worker] Packet size mismatch. Expected: 112, received: 62
-[2026-02-08T19:29:33.208Z] [Worker] Checksum mismatch. Expected: 25326, calculated: 25325
-[2026-02-08T19:29:33.370Z] [Worker] Packet too small: 6 bytes (min: 12)
-[2026-02-08T19:29:33.428Z] [Worker] Packet size mismatch. Expected: 112, received: 62
-[2026-02-08T19:29:33.555Z] [Worker] Packet size mismatch. Expected: 112, received: 62
-[2026-02-08T19:29:33.565Z] [Worker] Packet too small: 6 bytes (min: 12)
-[2026-02-08T19:29:33.666Z] [Worker] Invalid magic word: 0xdeadbee0
-[2026-02-08T19:29:33.718Z] [Worker] Invalid magic word: 0xdeadbee0
-[2026-02-08T19:29:33.726Z] [Worker] Checksum mismatch. Expected: 25397, calculated: 25396
-[2026-02-08T19:29:33.746Z] [Worker] Invalid magic word: 0xdeadbee0
-[2026-02-08T19:29:34.533Z] [Worker] Packet size mismatch. Expected: 4097, received: 4096
-[2026-02-08T19:29:35.020Z] [Worker] Packet size mismatch. Expected: 112, received: 62
-[2026-02-08T19:29:35.039Z] [Worker] Invalid magic word: 0xdeadbee0
-[2026-02-08T19:29:35.046Z] [Worker] Packet size mismatch. Expected: 4097, received: 4096
-[2026-02-08T19:29:35.141Z] [Worker] Packet size mismatch. Expected: 4097, received: 4096
-[2026-02-08T19:29:35.236Z] [Worker] Checksum mismatch. Expected: 25307, calculated: 25306
-[2026-02-08T19:29:35.864Z] [Worker] Checksum mismatch. Expected: 25308, calculated: 25307
-[2026-02-08T19:29:35.905Z] [Worker] Packet size mismatch. Expected: 112, received: 62
-[2026-02-08T19:29:36.266Z] [Worker] Checksum mismatch. Expected: 25199, calculated: 25198
-[2026-02-08T19:29:36.565Z] [Worker] Invalid magic word: 0xdeadbee0
-[2026-02-08T19:29:36.583Z] [Worker] Packet size mismatch. Expected: 4097, received: 4096
-[2026-02-08T19:29:36.671Z] [Worker] Packet size mismatch. Expected: 112, received: 62
-[2026-02-08T19:29:36.942Z] [Worker] Packet too small: 6 bytes (min: 12)
-[2026-02-08T19:29:36.951Z] [Worker] Packet size mismatch. Expected: 4097, received: 4096
-[2026-02-08T19:29:37.133Z] [Worker] Packet too small: 6 bytes (min: 12)
-[2026-02-08T19:29:37.142Z] [Worker] Packet too small: 6 bytes (min: 12)
-[2026-02-08T19:29:37.165Z] [Worker] Packet size mismatch. Expected: 112, received: 62
-[2026-02-08T19:29:37.215Z] [Worker] Packet size mismatch. Expected: 4097, received: 4096
-[2026-02-08T19:29:37.249Z] [Worker] Packet size mismatch. Expected: 112, received: 62
-[2026-02-08T19:29:37.363Z] [Worker] Packet size mismatch. Expected: 4097, received: 4096
-[2026-02-08T19:29:37.621Z] [Worker] Checksum mismatch. Expected: 25339, calculated: 25338
-[2026-02-08T19:29:37.869Z] [Worker] Packet too small: 6 bytes (min: 12)
-[2026-02-08T19:29:38.012Z] [Worker] Checksum mismatch. Expected: 25207, calculated: 25206
-[2026-02-08T19:29:38.074Z] [Worker] Packet too small: 6 bytes (min: 12)
-[2026-02-08T19:29:38.465Z] [Worker] Invalid magic word: 0xdeadbee0
-[2026-02-08T19:29:38.478Z] [Worker] Packet size mismatch. Expected: 112, received: 62
-[2026-02-08T19:29:38.493Z] [Worker] Invalid magic word: 0xdeadbee0
-[2026-02-08T19:29:38.644Z] [Worker] Packet size mismatch. Expected: 112, received: 62
-[2026-02-08T19:29:38.779Z] [Worker] Invalid magic word: 0xdeadbee0
-[2026-02-08T19:29:39.212Z] [Worker] Invalid magic word: 0xdeadbee0
-[2026-02-08T19:29:39.247Z] [Worker] Packet size mismatch. Expected: 4097, received: 4096
-[2026-02-08T19:29:39.497Z] [Worker] Packet size mismatch. Expected: 4097, received: 4096
-[2026-02-08T19:29:39.520Z] [Worker] Packet size mismatch. Expected: 4097, received: 4096
-[2026-02-08T19:29:39.631Z] [Worker] Checksum mismatch. Expected: 25272, calculated: 25271
-[2026-02-08T19:29:39.657Z] [Worker] Packet too small: 6 bytes (min: 12)
-[2026-02-08T19:29:39.691Z] [Worker] Checksum mismatch. Expected: 25369, calculated: 25368
-[2026-02-08T19:29:39.725Z] [Worker] Packet size mismatch. Expected: 4097, received: 4096
-[2026-02-08T19:29:39.811Z] [Worker] Packet too small: 6 bytes (min: 12)
-[2026-02-08T19:29:39.946Z] [Worker] Invalid magic word: 0xdeadbee0
-[2026-02-08T19:29:40.060Z] [Worker] Packet size mismatch. Expected: 4097, received: 4096
-[2026-02-08T19:29:40.193Z] [Worker] Packet too small: 6 bytes (min: 12)
-[2026-02-08T19:29:40.376Z] [Worker] Checksum mismatch. Expected: 25210, calculated: 25209
-[2026-02-08T19:29:40.409Z] [Worker] Packet size mismatch. Expected: 4097, received: 4096
-[2026-02-08T19:29:40.635Z] [Worker] Packet size mismatch. Expected: 112, received: 62
-[2026-02-08T19:29:40.679Z] [Worker] Packet size mismatch. Expected: 112, received: 62
-[2026-02-08T19:29:40.695Z] [Worker] Packet too small: 6 bytes (min: 12)
-[2026-02-08T19:29:40.868Z] [Worker] Packet size mismatch. Expected: 112, received: 62
-[2026-02-08T19:29:40.902Z] [Worker] Packet size mismatch. Expected: 112, received: 62
-[2026-02-08T19:29:41.023Z] [Worker] Packet size mismatch. Expected: 112, received: 62
-[2026-02-08T19:29:41.068Z] [Worker] Packet size mismatch. Expected: 112, received: 62
-[2026-02-08T19:29:41.074Z] [Worker] Checksum mismatch. Expected: 25318, calculated: 25317
-[2026-02-08T19:29:41.100Z] [Worker] Packet size mismatch. Expected: 4097, received: 4096
-[2026-02-08T19:29:41.138Z] [Worker] Packet too small: 6 bytes (min: 12)
-[2026-02-08T19:29:41.140Z] [Worker] Invalid magic word: 0xdeadbee0
-[2026-02-08T19:29:41.164Z] [Worker] Checksum mismatch. Expected: 25460, calculated: 25459
-[2026-02-08T19:29:41.382Z] [Worker] Checksum mismatch. Expected: 25301, calculated: 25300
-[2026-02-08T19:29:41.471Z] [Worker] Packet size mismatch. Expected: 112, received: 62
-[2026-02-08T19:29:41.481Z] [Worker] Packet size mismatch. Expected: 112, received: 62
-[2026-02-08T19:29:41.832Z] [Worker] Checksum mismatch. Expected: 25267, calculated: 25266
-[2026-02-08T19:29:42.408Z] [Worker] Packet size mismatch. Expected: 4097, received: 4096
-[2026-02-08T19:29:42.445Z] [Worker] Packet size mismatch. Expected: 112, received: 62
-[2026-02-08T19:29:42.578Z] [Worker] Packet too small: 6 bytes (min: 12)
-[2026-02-08T19:29:42.601Z] [Worker] Packet too small: 6 bytes (min: 12)
+[2026-02-08T19:40:33.919Z] [Worker] Packet size mismatch. Expected: 4097, received: 4096
+[2026-02-08T19:40:34.041Z] [Worker] Packet too small: 6 bytes (min: 12)
+[2026-02-08T19:40:34.076Z] [Worker] Packet size mismatch. Expected: 112, received: 62
+[2026-02-08T19:40:34.149Z] [Worker] Checksum mismatch. Expected: 25353, calculated: 25352
+[2026-02-08T19:40:34.239Z] [Worker] Checksum mismatch. Expected: 25248, calculated: 25247
+[2026-02-08T19:40:34.395Z] [Worker] Checksum mismatch. Expected: 25246, calculated: 25245
+[2026-02-08T19:40:34.597Z] [Worker] Packet size mismatch. Expected: 112, received: 62
+[2026-02-08T19:40:34.604Z] [Worker] Packet too small: 6 bytes (min: 12)
+[2026-02-08T19:40:34.617Z] [Worker] Packet size mismatch. Expected: 112, received: 62
+[2026-02-08T19:40:34.774Z] [Worker] Packet size mismatch. Expected: 4097, received: 4096
+[2026-02-08T19:40:34.818Z] [Worker] Packet size mismatch. Expected: 4097, received: 4096
+[2026-02-08T19:40:35.053Z] [Worker] Packet size mismatch. Expected: 4097, received: 4096
+[2026-02-08T19:40:35.355Z] [Worker] Packet size mismatch. Expected: 112, received: 62
+[2026-02-08T19:40:35.431Z] [Worker] Invalid magic word: 0xdeadbee0
+[2026-02-08T19:40:35.474Z] [Worker] Packet size mismatch. Expected: 4097, received: 4096
+[2026-02-08T19:40:35.525Z] [Worker] Checksum mismatch. Expected: 25304, calculated: 25303
+[2026-02-08T19:40:35.603Z] [Worker] Checksum mismatch. Expected: 25174, calculated: 25173
+[2026-02-08T19:40:35.640Z] [Worker] Checksum mismatch. Expected: 25234, calculated: 25233
+[2026-02-08T19:40:35.732Z] [Worker] Packet size mismatch. Expected: 4097, received: 4096
+[2026-02-08T19:40:35.853Z] [Worker] Packet size mismatch. Expected: 4097, received: 4096
+[2026-02-08T19:40:36.051Z] [Worker] Packet size mismatch. Expected: 4097, received: 4096
+[2026-02-08T19:40:36.133Z] [Worker] Packet too small: 6 bytes (min: 12)
+[2026-02-08T19:40:36.166Z] [Worker] Invalid magic word: 0xdeadbee0
+[2026-02-08T19:40:36.289Z] [Worker] Packet size mismatch. Expected: 4097, received: 4096
+[2026-02-08T19:40:36.317Z] [Worker] Packet size mismatch. Expected: 112, received: 62
+[2026-02-08T19:40:36.356Z] [Worker] Checksum mismatch. Expected: 25388, calculated: 25387
+[2026-02-08T19:40:36.399Z] [Worker] Packet size mismatch. Expected: 112, received: 62
+[2026-02-08T19:40:36.476Z] [Worker] Packet size mismatch. Expected: 4097, received: 4096
+[2026-02-08T19:40:36.653Z] [Worker] Packet size mismatch. Expected: 4097, received: 4096
+[2026-02-08T19:40:36.704Z] [Worker] Checksum mismatch. Expected: 25183, calculated: 25182
+[2026-02-08T19:40:36.765Z] [Worker] Invalid magic word: 0xdeadbee0
+[2026-02-08T19:40:36.811Z] [Worker] Packet size mismatch. Expected: 4097, received: 4096
+[2026-02-08T19:40:37.000Z] [Worker] Invalid magic word: 0xdeadbee0
+[2026-02-08T19:40:37.017Z] [Worker] Invalid magic word: 0xdeadbee0
+[2026-02-08T19:40:37.022Z] [Worker] Packet size mismatch. Expected: 4097, received: 4096
+[2026-02-08T19:40:37.036Z] [Worker] Invalid magic word: 0xdeadbee0
+[2026-02-08T19:40:37.072Z] [Worker] Packet too small: 6 bytes (min: 12)
+[2026-02-08T19:40:37.126Z] [Worker] Packet size mismatch. Expected: 4097, received: 4096
+[2026-02-08T19:40:37.214Z] [Worker] Packet size mismatch. Expected: 112, received: 62
+[2026-02-08T19:40:37.417Z] [Worker] Invalid magic word: 0xdeadbee0
+[2026-02-08T19:40:37.670Z] [Worker] Packet too small: 6 bytes (min: 12)
+[2026-02-08T19:40:37.886Z] [Worker] Packet size mismatch. Expected: 4097, received: 4096
+[2026-02-08T19:40:38.246Z] [Worker] Checksum mismatch. Expected: 25190, calculated: 25189
+[2026-02-08T19:40:38.392Z] [Worker] Invalid magic word: 0xdeadbee0
+[2026-02-08T19:40:38.876Z] [Worker] Packet size mismatch. Expected: 112, received: 62
+[2026-02-08T19:40:38.900Z] [Worker] Invalid magic word: 0xdeadbee0
+[2026-02-08T19:40:39.076Z] [Worker] Invalid magic word: 0xdeadbee0
+[2026-02-08T19:40:39.093Z] [Worker] Invalid magic word: 0xdeadbee0
+[2026-02-08T19:40:39.194Z] [Worker] Packet too small: 6 bytes (min: 12)
+[2026-02-08T19:40:39.274Z] [Worker] Packet size mismatch. Expected: 112, received: 62
+[2026-02-08T19:40:39.305Z] [Worker] Packet size mismatch. Expected: 112, received: 62
+[2026-02-08T19:40:39.450Z] [Worker] Packet size mismatch. Expected: 4097, received: 4096
+[2026-02-08T19:40:39.740Z] [Worker] Packet too small: 6 bytes (min: 12)
+[2026-02-08T19:40:40.189Z] [Worker] Packet size mismatch. Expected: 112, received: 62
+[2026-02-08T19:40:40.220Z] [Worker] Packet size mismatch. Expected: 112, received: 62
+[2026-02-08T19:40:40.302Z] [Worker] Invalid magic word: 0xdeadbee0
+[2026-02-08T19:40:40.390Z] [Worker] Packet too small: 6 bytes (min: 12)
+[2026-02-08T19:40:40.427Z] [Worker] Packet too small: 6 bytes (min: 12)
+[2026-02-08T19:40:40.544Z] [Worker] Packet too small: 6 bytes (min: 12)
+[2026-02-08T19:40:40.555Z] [Worker] Checksum mismatch. Expected: 25195, calculated: 25194
+[2026-02-08T19:40:40.601Z] [Worker] Checksum mismatch. Expected: 25270, calculated: 25269
+[2026-02-08T19:40:40.605Z] [Worker] Packet size mismatch. Expected: 4097, received: 4096
+[2026-02-08T19:40:40.696Z] [Worker] Packet size mismatch. Expected: 4097, received: 4096
+[2026-02-08T19:40:41.003Z] [Worker] Packet size mismatch. Expected: 4097, received: 4096
+[2026-02-08T19:40:41.050Z] [Worker] Packet size mismatch. Expected: 4097, received: 4096
+[2026-02-08T19:40:41.289Z] [Worker] Packet size mismatch. Expected: 112, received: 62
+[2026-02-08T19:40:41.420Z] [Worker] Checksum mismatch. Expected: 25343, calculated: 25342
+[2026-02-08T19:40:41.756Z] [Worker] Packet too small: 6 bytes (min: 12)
+[2026-02-08T19:40:41.817Z] [Worker] Checksum mismatch. Expected: 25244, calculated: 25243
+[2026-02-08T19:40:41.835Z] [Worker] Checksum mismatch. Expected: 25275, calculated: 25274
+[2026-02-08T19:40:41.916Z] [Worker] Packet size mismatch. Expected: 112, received: 62
+[2026-02-08T19:40:42.033Z] [Worker] Packet size mismatch. Expected: 112, received: 62
+[2026-02-08T19:40:42.180Z] [Worker] Packet size mismatch. Expected: 112, received: 62
+[2026-02-08T19:40:42.254Z] [Worker] Packet size mismatch. Expected: 112, received: 62
+[2026-02-08T19:40:42.314Z] [Worker] Packet size mismatch. Expected: 4097, received: 4096
+[2026-02-08T19:40:42.367Z] [Worker] Invalid magic word: 0xdeadbee0
+[2026-02-08T19:40:42.389Z] [Worker] Packet too small: 6 bytes (min: 12)
+[2026-02-08T19:40:42.421Z] [Worker] Invalid magic word: 0xdeadbee0
+[2026-02-08T19:40:42.497Z] [Worker] Packet too small: 6 bytes (min: 12)
+[2026-02-08T19:40:42.629Z] [Worker] Packet size mismatch. Expected: 112, received: 62
+[2026-02-08T19:40:42.772Z] [Worker] Checksum mismatch. Expected: 25268, calculated: 25267
+[2026-02-08T19:40:42.818Z] [Worker] Checksum mismatch. Expected: 25344, calculated: 25343
+[2026-02-08T19:40:43.247Z] [Worker] Packet size mismatch. Expected: 4097, received: 4096
+[2026-02-08T19:40:43.283Z] [Worker] Packet size mismatch. Expected: 4097, received: 4096
+[2026-02-08T19:40:43.423Z] [Worker] Packet too small: 6 bytes (min: 12)
+[2026-02-08T19:40:43.504Z] [Worker] Packet size mismatch. Expected: 112, received: 62
+[2026-02-08T19:40:43.649Z] [Worker] Invalid magic word: 0xdeadbee0
+[2026-02-08T19:40:43.879Z] [Worker] Packet size mismatch. Expected: 4097, received: 4096
+[2026-02-08T19:40:43.893Z] [Worker] Invalid magic word: 0xdeadbee0
+[2026-02-08T19:40:44.188Z] [Worker] Packet size mismatch. Expected: 112, received: 62
+[2026-02-08T19:40:44.215Z] [Worker] Packet size mismatch. Expected: 112, received: 62
+[2026-02-08T19:40:44.380Z] [Worker] Checksum mismatch. Expected: 25340, calculated: 25339
+[2026-02-08T19:40:44.446Z] [Worker] Packet size mismatch. Expected: 112, received: 62
+[2026-02-08T19:40:44.630Z] [Worker] Invalid magic word: 0xdeadbee0
+[2026-02-08T19:40:44.818Z] [Worker] Invalid magic word: 0xdeadbee0
+[2026-02-08T19:40:44.981Z] [Worker] Invalid magic word: 0xdeadbee0
+[2026-02-08T19:40:44.993Z] [Worker] Packet size mismatch. Expected: 112, received: 62
+[2026-02-08T19:40:45.150Z] [Worker] Packet too small: 6 bytes (min: 12)
+[2026-02-08T19:40:45.518Z] [Worker] Checksum mismatch. Expected: 25395, calculated: 25394
+[2026-02-08T19:40:45.569Z] [Worker] Invalid magic word: 0xdeadbee0
+[2026-02-08T19:40:45.603Z] [Worker] Packet too small: 6 bytes (min: 12)
+[2026-02-08T19:40:45.895Z] [Worker] Packet size mismatch. Expected: 112, received: 62
+[2026-02-08T19:40:45.996Z] [Worker] Checksum mismatch. Expected: 25408, calculated: 25407
+[2026-02-08T19:40:46.141Z] [Worker] Invalid magic word: 0xdeadbee0
+[2026-02-08T19:40:46.341Z] [Worker] Checksum mismatch. Expected: 25211, calculated: 25210
+[2026-02-08T19:40:46.598Z] [Worker] Checksum mismatch. Expected: 25387, calculated: 25386
+[2026-02-08T19:40:46.659Z] [Worker] Invalid magic word: 0xdeadbee0
+[2026-02-08T19:40:46.665Z] [Worker] Packet size mismatch. Expected: 4097, received: 4096
+[2026-02-08T19:40:46.688Z] [Worker] Packet too small: 6 bytes (min: 12)
+[2026-02-08T19:40:46.692Z] [Worker] Checksum mismatch. Expected: 25285, calculated: 25284
+[2026-02-08T19:40:46.885Z] [Worker] Packet too small: 6 bytes (min: 12)
+[2026-02-08T19:40:46.903Z] [Worker] Checksum mismatch. Expected: 25381, calculated: 25380
+[2026-02-08T19:40:46.971Z] [Worker] Checksum mismatch. Expected: 25235, calculated: 25234
+[2026-02-08T19:40:46.981Z] [Worker] Invalid magic word: 0xdeadbee0
+[2026-02-08T19:40:47.168Z] [Worker] Packet size mismatch. Expected: 112, received: 62
+[2026-02-08T19:40:47.641Z] [Worker] Invalid magic word: 0xdeadbee0
+[2026-02-08T19:40:47.823Z] [Worker] Invalid magic word: 0xdeadbee0
+[2026-02-08T19:40:47.865Z] [Worker] Packet size mismatch. Expected: 4097, received: 4096
+[2026-02-08T19:40:47.886Z] [Worker] Packet too small: 6 bytes (min: 12)
+[2026-02-08T19:40:48.177Z] [Worker] Packet size mismatch. Expected: 112, received: 62
+[2026-02-08T19:40:48.304Z] [Worker] Packet size mismatch. Expected: 4097, received: 4096
+[2026-02-08T19:40:48.310Z] [Worker] Packet too small: 6 bytes (min: 12)
+[2026-02-08T19:40:48.387Z] [Worker] Packet size mismatch. Expected: 4097, received: 4096
+[2026-02-08T19:40:48.578Z] [Worker] Packet size mismatch. Expected: 4097, received: 4096
+[2026-02-08T19:50:00.798Z] [Worker] Invalid magic word: 0xdeadbee0
+[2026-02-08T19:50:00.828Z] [Worker] Checksum mismatch. Expected: 25231, calculated: 25230
+[2026-02-08T19:50:00.834Z] [Worker] Invalid magic word: 0xdeadbee0
+[2026-02-08T19:50:00.844Z] [Worker] Invalid magic word: 0xdeadbee0
+[2026-02-08T19:50:00.845Z] [Worker] Packet size mismatch. Expected: 4097, received: 4096
+[2026-02-08T19:50:00.923Z] [Worker] Checksum mismatch. Expected: 25136, calculated: 25135
+[2026-02-08T19:50:01.057Z] [Worker] Checksum mismatch. Expected: 25358, calculated: 25357
+[2026-02-08T19:50:01.270Z] [Worker] Packet size mismatch. Expected: 112, received: 62
+[2026-02-08T19:50:01.286Z] [Worker] Packet size mismatch. Expected: 112, received: 62
+[2026-02-08T19:50:01.357Z] [Worker] Packet size mismatch. Expected: 112, received: 62
+[2026-02-08T19:50:01.381Z] [Worker] Packet too small: 6 bytes (min: 12)
+[2026-02-08T19:50:01.465Z] [Worker] Packet too small: 6 bytes (min: 12)
+[2026-02-08T19:50:01.487Z] [Worker] Packet size mismatch. Expected: 4097, received: 4096
+[2026-02-08T19:50:01.517Z] [Worker] Invalid magic word: 0xdeadbee0
+[2026-02-08T19:50:01.538Z] [Worker] Packet too small: 6 bytes (min: 12)
+[2026-02-08T19:50:01.545Z] [Worker] Checksum mismatch. Expected: 25136, calculated: 25135
+[2026-02-08T19:50:01.577Z] [Worker] Packet size mismatch. Expected: 112, received: 62
+[2026-02-08T19:50:01.637Z] [Worker] Packet size mismatch. Expected: 112, received: 62
+[2026-02-08T19:50:01.708Z] [Worker] Checksum mismatch. Expected: 25145, calculated: 25144
+[2026-02-08T19:50:01.821Z] [Worker] Invalid magic word: 0xdeadbee0
+[2026-02-08T19:50:01.879Z] [Worker] Packet size mismatch. Expected: 4097, received: 4096
+[2026-02-08T19:50:02.179Z] [Worker] Packet size mismatch. Expected: 4097, received: 4096
+[2026-02-08T19:50:02.187Z] [Worker] Checksum mismatch. Expected: 25158, calculated: 25157
+[2026-02-08T19:50:02.248Z] [Worker] Packet too small: 6 bytes (min: 12)
+[2026-02-08T19:50:02.253Z] [Worker] Checksum mismatch. Expected: 25267, calculated: 25266
+[2026-02-08T19:50:02.287Z] [Worker] Packet size mismatch. Expected: 112, received: 62
+[2026-02-08T19:50:02.392Z] [Worker] Invalid magic word: 0xdeadbee0
+[2026-02-08T19:50:02.434Z] [Worker] Packet size mismatch. Expected: 4097, received: 4096
+[2026-02-08T19:50:02.526Z] [Worker] Invalid magic word: 0xdeadbee0
+[2026-02-08T19:50:02.558Z] [Worker] Packet too small: 6 bytes (min: 12)
+[2026-02-08T19:50:02.586Z] [Worker] Invalid magic word: 0xdeadbee0
+[2026-02-08T19:50:02.622Z] [Worker] Packet too small: 6 bytes (min: 12)
+[2026-02-08T19:50:02.640Z] [Worker] Checksum mismatch. Expected: 25143, calculated: 25142
+[2026-02-08T19:50:02.652Z] [Worker] Checksum mismatch. Expected: 25163, calculated: 25162
+[2026-02-08T19:50:02.686Z] [Worker] Packet size mismatch. Expected: 112, received: 62
+[2026-02-08T19:50:02.793Z] [Worker] Checksum mismatch. Expected: 25392, calculated: 25391
+[2026-02-08T19:50:02.839Z] [Worker] Checksum mismatch. Expected: 25213, calculated: 25212
+[2026-02-08T19:50:02.964Z] [Worker] Checksum mismatch. Expected: 25163, calculated: 25162
+[2026-02-08T19:50:03.059Z] [Worker] Packet size mismatch. Expected: 112, received: 62
+[2026-02-08T19:50:03.078Z] [Worker] Packet too small: 6 bytes (min: 12)
+[2026-02-08T19:50:03.089Z] [Worker] Packet size mismatch. Expected: 112, received: 62
+[2026-02-08T19:50:03.166Z] [Worker] Packet size mismatch. Expected: 4097, received: 4096
+[2026-02-08T19:50:03.229Z] [Worker] Checksum mismatch. Expected: 25337, calculated: 25336
+[2026-02-08T19:50:03.252Z] [Worker] Packet size mismatch. Expected: 112, received: 62
+[2026-02-08T19:50:03.257Z] [Worker] Packet size mismatch. Expected: 4097, received: 4096
+[2026-02-08T19:50:03.374Z] [Worker] Invalid magic word: 0xdeadbee0
+[2026-02-08T19:50:03.459Z] [Worker] Packet too small: 6 bytes (min: 12)
+[2026-02-08T19:50:03.472Z] [Worker] Invalid magic word: 0xdeadbee0
+[2026-02-08T19:50:03.510Z] [Worker] Packet size mismatch. Expected: 4097, received: 4096
+[2026-02-08T19:50:03.510Z] [Worker] Checksum mismatch. Expected: 25287, calculated: 25286
+[2026-02-08T19:50:03.545Z] [Worker] Packet size mismatch. Expected: 4097, received: 4096
+[2026-02-08T19:50:03.571Z] [Worker] Packet size mismatch. Expected: 112, received: 62
+[2026-02-08T19:50:03.577Z] [Worker] Invalid magic word: 0xdeadbee0
+[2026-02-08T19:50:03.642Z] [Worker] Invalid magic word: 0xdeadbee0
+[2026-02-08T19:50:03.702Z] [Worker] Packet size mismatch. Expected: 4097, received: 4096
+[2026-02-08T19:50:03.717Z] [Worker] Packet size mismatch. Expected: 112, received: 62
+[2026-02-08T19:50:03.770Z] [Worker] Packet size mismatch. Expected: 4097, received: 4096
+[2026-02-08T19:50:03.817Z] [Worker] Packet size mismatch. Expected: 4097, received: 4096
+[2026-02-08T19:50:03.951Z] [Worker] Packet too small: 6 bytes (min: 12)
+[2026-02-08T19:50:04.071Z] [Worker] Packet too small: 6 bytes (min: 12)
+[2026-02-08T19:50:04.163Z] [Worker] Checksum mismatch. Expected: 25335, calculated: 25334
+[2026-02-08T19:50:04.188Z] [Worker] Checksum mismatch. Expected: 25377, calculated: 25376
+[2026-02-08T19:50:04.451Z] [Worker] Packet too small: 6 bytes (min: 12)
+[2026-02-08T19:50:04.518Z] [Worker] Packet size mismatch. Expected: 4097, received: 4096
+[2026-02-08T19:50:04.544Z] [Worker] Packet too small: 6 bytes (min: 12)
+[2026-02-08T19:50:04.557Z] [Worker] Checksum mismatch. Expected: 25212, calculated: 25211
+[2026-02-08T19:50:04.595Z] [Worker] Packet size mismatch. Expected: 4097, received: 4096
+[2026-02-08T19:50:04.626Z] [Worker] Packet size mismatch. Expected: 112, received: 62
+[2026-02-08T19:50:04.639Z] [Worker] Checksum mismatch. Expected: 25341, calculated: 25340
+[2026-02-08T19:50:04.728Z] [Worker] Invalid magic word: 0xdeadbee0
+[2026-02-08T19:50:04.842Z] [Worker] Packet size mismatch. Expected: 4097, received: 4096
+[2026-02-08T19:50:04.882Z] [Worker] Packet too small: 6 bytes (min: 12)
+[2026-02-08T19:50:05.090Z] [Worker] Packet size mismatch. Expected: 112, received: 62
+[2026-02-08T19:50:05.331Z] [Worker] Packet size mismatch. Expected: 112, received: 62
+[2026-02-08T19:50:05.353Z] [Worker] Packet size mismatch. Expected: 4097, received: 4096
+[2026-02-08T19:50:05.396Z] [Worker] Checksum mismatch. Expected: 25269, calculated: 25268
+[2026-02-08T19:50:05.465Z] [Worker] Invalid magic word: 0xdeadbee0
+[2026-02-08T19:50:05.481Z] [Worker] Packet too small: 6 bytes (min: 12)
+[2026-02-08T19:50:05.565Z] [Worker] Checksum mismatch. Expected: 25291, calculated: 25290
+[2026-02-08T19:50:05.618Z] [Worker] Packet too small: 6 bytes (min: 12)
+[2026-02-08T19:50:05.711Z] [Worker] Invalid magic word: 0xdeadbee0
+[2026-02-08T19:50:05.745Z] [Worker] Packet too small: 6 bytes (min: 12)
+[2026-02-08T19:50:05.793Z] [Worker] Packet size mismatch. Expected: 112, received: 62
+[2026-02-08T19:50:05.802Z] [Worker] Invalid magic word: 0xdeadbee0
+[2026-02-08T19:50:05.896Z] [Worker] Invalid magic word: 0xdeadbee0
+[2026-02-08T19:50:05.900Z] [Worker] Checksum mismatch. Expected: 25321, calculated: 25320
+[2026-02-08T19:50:05.928Z] [Worker] Packet size mismatch. Expected: 112, received: 62
+[2026-02-08T19:50:05.933Z] [Worker] Checksum mismatch. Expected: 25373, calculated: 25372
+[2026-02-08T19:50:05.945Z] [Worker] Packet too small: 6 bytes (min: 12)
+[2026-02-08T19:50:05.981Z] [Worker] Checksum mismatch. Expected: 25197, calculated: 25196
+[2026-02-08T19:50:06.075Z] [Worker] Invalid magic word: 0xdeadbee0
+[2026-02-08T19:50:06.161Z] [Worker] Packet size mismatch. Expected: 4097, received: 4096
+[2026-02-08T19:50:06.224Z] [Worker] Packet size mismatch. Expected: 4097, received: 4096
+[2026-02-08T19:50:06.263Z] [Worker] Invalid magic word: 0xdeadbee0
+[2026-02-08T19:50:06.275Z] [Worker] Packet size mismatch. Expected: 4097, received: 4096
+[2026-02-08T19:50:06.354Z] [Worker] Invalid magic word: 0xdeadbee0
+[2026-02-08T19:50:06.413Z] [Worker] Packet size mismatch. Expected: 112, received: 62
+[2026-02-08T19:50:06.485Z] [Worker] Checksum mismatch. Expected: 25235, calculated: 25234
+[2026-02-08T19:50:06.561Z] [Worker] Packet too small: 6 bytes (min: 12)
+[2026-02-08T19:50:06.580Z] [Worker] Packet size mismatch. Expected: 112, received: 62
+[2026-02-08T19:50:06.613Z] [Worker] Packet too small: 6 bytes (min: 12)
+[2026-02-08T19:50:06.649Z] [Worker] Checksum mismatch. Expected: 25244, calculated: 25243
+[2026-02-08T19:50:06.732Z] [Worker] Invalid magic word: 0xdeadbee0
+[2026-02-08T19:50:06.790Z] [Worker] Packet size mismatch. Expected: 112, received: 62
+[2026-02-08T19:50:06.811Z] [Worker] Packet too small: 6 bytes (min: 12)
+[2026-02-08T19:50:07.043Z] [Worker] Packet too small: 6 bytes (min: 12)
+[2026-02-08T19:50:07.060Z] [Worker] Invalid magic word: 0xdeadbee0
+[2026-02-08T19:50:07.175Z] [Worker] Packet size mismatch. Expected: 4097, received: 4096
+[2026-02-08T19:50:07.187Z] [Worker] Packet size mismatch. Expected: 112, received: 62
+[2026-02-08T19:50:07.219Z] [Worker] Invalid magic word: 0xdeadbee0
+[2026-02-08T19:50:07.225Z] [Worker] Invalid magic word: 0xdeadbee0
+[2026-02-08T19:50:07.353Z] [Worker] Packet too small: 6 bytes (min: 12)
+[2026-02-08T19:50:07.404Z] [Worker] Packet size mismatch. Expected: 4097, received: 4096
+[2026-02-08T19:50:07.492Z] [Worker] Packet size mismatch. Expected: 4097, received: 4096
+[2026-02-08T19:50:07.536Z] [Worker] Invalid magic word: 0xdeadbee0
+[2026-02-08T19:50:07.892Z] [Worker] Packet size mismatch. Expected: 4097, received: 4096
+[2026-02-08T19:50:08.260Z] [Worker] Checksum mismatch. Expected: 25290, calculated: 25289
+[2026-02-08T19:50:08.293Z] [Worker] Packet too small: 6 bytes (min: 12)
+[2026-02-08T19:50:08.297Z] [Worker] Packet size mismatch. Expected: 112, received: 62
+[2026-02-08T19:50:08.433Z] [Worker] Packet too small: 6 bytes (min: 12)
+[2026-02-08T19:50:08.451Z] [Worker] Packet size mismatch. Expected: 4097, received: 4096
+[2026-02-08T19:50:08.634Z] [Worker] Checksum mismatch. Expected: 25387, calculated: 25386
+[2026-02-08T19:50:08.753Z] [Worker] Packet size mismatch. Expected: 112, received: 62
+[2026-02-08T19:50:08.773Z] [Worker] Invalid magic word: 0xdeadbee0
+[2026-02-08T19:50:08.956Z] [Worker] Invalid magic word: 0xdeadbee0
+[2026-02-08T19:50:09.065Z] [Worker] Packet size mismatch. Expected: 4097, received: 4096
+[2026-02-08T19:50:09.072Z] [Worker] Packet size mismatch. Expected: 4097, received: 4096
+[2026-02-08T19:50:09.092Z] [Worker] Packet too small: 6 bytes (min: 12)
+[2026-02-08T19:50:09.094Z] [Worker] Invalid magic word: 0xdeadbee0
+[2026-02-08T19:50:09.449Z] [Worker] Packet size mismatch. Expected: 4097, received: 4096
+[2026-02-08T19:50:09.510Z] [Worker] Packet too small: 6 bytes (min: 12)
+[2026-02-08T19:50:09.730Z] [Worker] Packet too small: 6 bytes (min: 12)
+[2026-02-08T19:50:09.738Z] [Worker] Packet size mismatch. Expected: 112, received: 62
+[2026-02-08T19:50:09.838Z] [Worker] Packet size mismatch. Expected: 4097, received: 4096
+[2026-02-08T19:50:09.881Z] [Worker] Packet size mismatch. Expected: 4097, received: 4096
+[2026-02-08T19:50:10.150Z] [Worker] Invalid magic word: 0xdeadbee0
+[2026-02-08T19:50:10.188Z] [Worker] Packet size mismatch. Expected: 4097, received: 4096
+[2026-02-08T19:50:10.233Z] [Worker] Packet size mismatch. Expected: 112, received: 62
+[2026-02-08T19:50:10.288Z] [Worker] Invalid magic word: 0xdeadbee0
+[2026-02-08T19:50:10.329Z] [Worker] Invalid magic word: 0xdeadbee0
+[2026-02-08T19:50:10.364Z] [Worker] Packet size mismatch. Expected: 112, received: 62
+[2026-02-08T19:50:10.448Z] [Worker] Checksum mismatch. Expected: 25244, calculated: 25243
+[2026-02-08T19:50:10.503Z] [Worker] Packet size mismatch. Expected: 112, received: 62
+[2026-02-08T19:50:10.537Z] [Worker] Checksum mismatch. Expected: 25384, calculated: 25383
+[2026-02-08T19:50:10.824Z] [Worker] Invalid magic word: 0xdeadbee0
+[2026-02-08T19:50:10.828Z] [Worker] Packet size mismatch. Expected: 112, received: 62
+[2026-02-08T19:50:10.838Z] [Worker] Invalid magic word: 0xdeadbee0
+[2026-02-08T19:50:10.857Z] [Worker] Packet size mismatch. Expected: 4097, received: 4096
+[2026-02-08T19:50:10.870Z] [Worker] Packet too small: 6 bytes (min: 12)
+[2026-02-08T19:50:10.970Z] [Worker] Packet size mismatch. Expected: 4097, received: 4096
+[2026-02-08T19:50:11.207Z] [Worker] Invalid magic word: 0xdeadbee0
+[2026-02-08T19:50:11.210Z] [Worker] Packet size mismatch. Expected: 4097, received: 4096
+[2026-02-08T19:50:11.294Z] [Worker] Packet too small: 6 bytes (min: 12)
+[2026-02-08T19:50:11.307Z] [Worker] Checksum mismatch. Expected: 25356, calculated: 25355
+[2026-02-08T19:50:11.325Z] [Worker] Invalid magic word: 0xdeadbee0
+[2026-02-08T19:50:11.350Z] [Worker] Packet size mismatch. Expected: 4097, received: 4096
+[2026-02-08T19:50:11.357Z] [Worker] Invalid magic word: 0xdeadbee0
+[2026-02-08T19:50:11.523Z] [Worker] Packet size mismatch. Expected: 112, received: 62
+[2026-02-08T19:50:11.600Z] [Worker] Packet too small: 6 bytes (min: 12)
+[2026-02-08T19:50:11.723Z] [Worker] Packet too small: 6 bytes (min: 12)
+[2026-02-08T19:50:11.729Z] [Worker] Packet too small: 6 bytes (min: 12)
+[2026-02-08T19:50:11.759Z] [Worker] Packet too small: 6 bytes (min: 12)
+[2026-02-08T19:50:11.887Z] [Worker] Checksum mismatch. Expected: 25267, calculated: 25266
+[2026-02-08T19:50:11.930Z] [Worker] Checksum mismatch. Expected: 25338, calculated: 25337
+[2026-02-08T19:50:11.962Z] [Worker] Invalid magic word: 0xdeadbee0
+[2026-02-08T19:50:11.967Z] [Worker] Invalid magic word: 0xdeadbee0
+[2026-02-08T19:50:12.015Z] [Worker] Packet size mismatch. Expected: 112, received: 62
+[2026-02-08T19:50:12.058Z] [Worker] Packet size mismatch. Expected: 4097, received: 4096
+[2026-02-08T19:50:12.061Z] [Worker] Packet too small: 6 bytes (min: 12)
+[2026-02-08T19:50:12.135Z] [Worker] Packet too small: 6 bytes (min: 12)
+[2026-02-08T19:50:12.346Z] [Worker] Packet size mismatch. Expected: 112, received: 62
+[2026-02-08T19:50:12.482Z] [Worker] Invalid magic word: 0xdeadbee0
+[2026-02-08T19:50:12.573Z] [Worker] Checksum mismatch. Expected: 25359, calculated: 25358
+[2026-02-08T19:50:12.608Z] [Worker] Packet size mismatch. Expected: 4097, received: 4096
+[2026-02-08T19:50:12.706Z] [Worker] Packet too small: 6 bytes (min: 12)
+[2026-02-08T19:50:12.735Z] [Worker] Packet too small: 6 bytes (min: 12)
+[2026-02-08T19:50:12.784Z] [Worker] Packet size mismatch. Expected: 4097, received: 4096
+[2026-02-08T19:50:12.937Z] [Worker] Packet size mismatch. Expected: 4097, received: 4096
+[2026-02-08T19:50:12.993Z] [Worker] Checksum mismatch. Expected: 25253, calculated: 25252
+[2026-02-08T19:50:13.172Z] [Worker] Packet size mismatch. Expected: 4097, received: 4096
+[2026-02-08T19:50:13.216Z] [Worker] Packet size mismatch. Expected: 4097, received: 4096
+[2026-02-08T19:50:13.236Z] [Worker] Packet size mismatch. Expected: 4097, received: 4096
+[2026-02-08T19:50:13.298Z] [Worker] Packet too small: 6 bytes (min: 12)
+[2026-02-08T19:50:13.360Z] [Worker] Packet size mismatch. Expected: 4097, received: 4096
+[2026-02-08T19:50:13.389Z] [Worker] Invalid magic word: 0xdeadbee0
+[2026-02-08T19:50:13.431Z] [Worker] Packet size mismatch. Expected: 4097, received: 4096
+[2026-02-08T19:50:13.625Z] [Worker] Packet size mismatch. Expected: 112, received: 62
+[2026-02-08T19:50:13.704Z] [Worker] Packet size mismatch. Expected: 4097, received: 4096
+[2026-02-08T19:50:13.745Z] [Worker] Invalid magic word: 0xdeadbee0
+[2026-02-08T19:50:13.747Z] [Worker] Packet size mismatch. Expected: 4097, received: 4096
+[2026-02-08T19:50:13.805Z] [Worker] Packet size mismatch. Expected: 4097, received: 4096
+[2026-02-08T19:50:13.913Z] [Worker] Packet too small: 6 bytes (min: 12)
+[2026-02-08T19:50:14.021Z] [Worker] Packet too small: 6 bytes (min: 12)
+[2026-02-08T19:50:14.098Z] [Worker] Checksum mismatch. Expected: 25210, calculated: 25209
+[2026-02-08T19:50:14.103Z] [Worker] Packet size mismatch. Expected: 112, received: 62
+[2026-02-08T19:50:14.168Z] [Worker] Packet size mismatch. Expected: 4097, received: 4096
+[2026-02-08T19:50:14.283Z] [Worker] Packet size mismatch. Expected: 4097, received: 4096
+[2026-02-08T19:50:14.327Z] [Worker] Checksum mismatch. Expected: 25321, calculated: 25320
+[2026-02-08T19:50:14.393Z] [Worker] Packet size mismatch. Expected: 112, received: 62
+[2026-02-08T19:50:14.402Z] [Worker] Checksum mismatch. Expected: 25442, calculated: 25441
+[2026-02-08T19:50:14.436Z] [Worker] Packet size mismatch. Expected: 112, received: 62
+[2026-02-08T19:50:14.647Z] [Worker] Checksum mismatch. Expected: 25324, calculated: 25323
+[2026-02-08T19:50:14.648Z] [Worker] Packet size mismatch. Expected: 112, received: 62
+[2026-02-08T19:50:14.668Z] [Worker] Packet size mismatch. Expected: 4097, received: 4096
+[2026-02-08T19:50:14.678Z] [Worker] Packet size mismatch. Expected: 4097, received: 4096
+[2026-02-08T19:50:14.715Z] [Worker] Packet size mismatch. Expected: 4097, received: 4096
+[2026-02-08T19:50:14.936Z] [Worker] Packet size mismatch. Expected: 4097, received: 4096
+[2026-02-08T19:50:14.955Z] [Worker] Invalid magic word: 0xdeadbee0
+[2026-02-08T19:50:14.966Z] [Worker] Packet size mismatch. Expected: 4097, received: 4096
+[2026-02-08T19:50:15.194Z] [Worker] Packet size mismatch. Expected: 4097, received: 4096
+[2026-02-08T19:50:15.351Z] [Worker] Checksum mismatch. Expected: 25432, calculated: 25431
+[2026-02-08T19:50:15.395Z] [Worker] Packet size mismatch. Expected: 4097, received: 4096
+[2026-02-08T19:50:15.461Z] [Worker] Checksum mismatch. Expected: 25357, calculated: 25356
+[2026-02-08T19:50:15.516Z] [Worker] Invalid magic word: 0xdeadbee0
+[2026-02-08T19:50:15.601Z] [Worker] Packet size mismatch. Expected: 4097, received: 4096
 
-[Server] Received signal 15, shutting down...
-[Worker 3] Stopped
-[Worker 2] Stopped
-[Worker 1] Stopped
-[Worker 4] Stopped
-[Listener] Stopped
-[Server] Shared memory cleaned up
-[Server] Shutdown complete
+--- Client run statistics (2026-02-08 12:50:15) ---
+  Total packets sent: 24182
+  Valid (good): 23967 (99.11%)
+  Invalid (drop): 215 (0.89%)
+  Invalid breakdown (% of total invalid, count/total):
+    - Magic word: 20.0% (43/215)
+    - Checksum: 18.6% (40/215)
+    - Too small: 18.6% (40/215)
+    - Too large: 26.0% (56/215)
+    - Size mismatch: 16.7% (36/215)
+  INVALID_BREAKDOWN magic=43 checksum=40 too_small=40 too_large=56 size_mismatch=36
+  Time: 15.00s, Avg rate: 1612.07 pps

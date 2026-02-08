@@ -19,8 +19,25 @@
 #include <sys/stat.h>
 #include <signal.h>
 #include <ctime>
+#include <chrono>
+#include <iomanip>
+#include <sstream>
 
 #include "protocol.h"
+
+// ISO8601 UTC timestamp for log filtering (e.g. last 48h)
+static std::string log_timestamp() {
+    auto now = std::chrono::system_clock::now();
+    time_t t = std::chrono::system_clock::to_time_t(now);
+    auto ms = std::chrono::duration_cast<std::chrono::milliseconds>(
+        now.time_since_epoch()) % 1000;
+    std::tm* utc = std::gmtime(&t);
+    if (!utc) return "[?] ";
+    std::ostringstream oss;
+    oss << "[" << std::put_time(utc, "%Y-%m-%dT%H:%M:%S")
+        << "." << std::setfill('0') << std::setw(3) << ms.count() << "Z] ";
+    return oss.str();
+}
 
 // Constants
 #define UDP_PORT 8080
@@ -81,7 +98,7 @@ void decrypt_payload(uint8_t* payload, size_t len) {
 void process_packet(uint8_t* buffer, size_t bytes_received, int thread_id) {
     // Buffer overflow protection
     if (bytes_received > MAX_BUFFER_SIZE) {
-        std::cerr << "[Worker] Packet too large: " << bytes_received 
+        std::cerr << log_timestamp() << "[Worker] Packet too large: " << bytes_received 
                   << " bytes (max: " << MAX_BUFFER_SIZE << ")" << std::endl;
         if (g_stats) {
             g_stats->dropped_packets++;
@@ -91,7 +108,7 @@ void process_packet(uint8_t* buffer, size_t bytes_received, int thread_id) {
     
     // Parse packet header
     if (bytes_received < sizeof(PacketHeader)) {
-        std::cerr << "[Worker] Packet too small: " << bytes_received 
+        std::cerr << log_timestamp() << "[Worker] Packet too small: " << bytes_received 
                   << " bytes (min: " << sizeof(PacketHeader) << ")" << std::endl;
         if (g_stats) {
             g_stats->dropped_packets++;
@@ -107,7 +124,7 @@ void process_packet(uint8_t* buffer, size_t bytes_received, int thread_id) {
 
     // Verify magic word
     if (magic != 0xDEADBEEF) {
-        std::cerr << "[Worker] Invalid magic word: 0x" 
+        std::cerr << log_timestamp() << "[Worker] Invalid magic word: 0x" 
                   << std::hex << magic << std::dec << std::endl;
         if (g_stats) {
             g_stats->dropped_packets++;
@@ -118,7 +135,7 @@ void process_packet(uint8_t* buffer, size_t bytes_received, int thread_id) {
     // Verify payload length
     size_t expected_size = sizeof(PacketHeader) + payload_len;
     if (bytes_received < expected_size) {
-        std::cerr << "[Worker] Packet size mismatch. Expected: " 
+        std::cerr << log_timestamp() << "[Worker] Packet size mismatch. Expected: " 
                   << expected_size << ", received: " << bytes_received << std::endl;
         if (g_stats) {
             g_stats->dropped_packets++;
@@ -132,7 +149,7 @@ void process_packet(uint8_t* buffer, size_t bytes_received, int thread_id) {
     for (size_t i = 12; i < bytes_received; i++) calculated_checksum += buffer[i];
     calculated_checksum &= 0xFFFFFFFFu;
     if (calculated_checksum != expected_checksum) {
-        std::cerr << "[Worker] Checksum mismatch. Expected: " 
+        std::cerr << log_timestamp() << "[Worker] Checksum mismatch. Expected: " 
                   << expected_checksum << ", calculated: " << calculated_checksum << std::endl;
         if (g_stats) {
             g_stats->dropped_packets++;
@@ -192,7 +209,7 @@ void listener_thread(int sockfd) {
                 usleep(1000); // Small sleep to prevent busy-waiting
                 continue;
             } else {
-                std::cerr << "[Listener] recvfrom error: " << strerror(errno) << std::endl;
+                std::cerr << log_timestamp() << "[Listener] recvfrom error: " << strerror(errno) << std::endl;
                 break;
             }
         }

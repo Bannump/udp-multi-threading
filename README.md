@@ -128,12 +128,7 @@ source .venv/bin/activate
 streamlit run dashboard.py
 ```
 
-The dashboard provides:
-
-- **Real-time metrics** from shared memory: total/dropped packets, uptime, status (heartbeat)
-- **Worker thread load** bar chart (per-thread packet counts for load-balancing visibility)
-- **Control panel**: Start Server / Stop Server (subprocess), Traffic Generator (Packets/sec slider + Inject Traffic)
-- **Server log** tail (last 20 lines of `server.log`) for magic-word and checksum validation
+The dashboard provides real-time metrics from shared memory, throughput rates, per-worker throughput, load balance, and a **Dropped & validation** log view with reason and details for each drop. For a full description of the analytics and metrics, see **[Analytics](docs/Analytics.md)**.
 
 When you click **Start Server**, the server runs in the background and writes to `server.log`. Use **Inject Traffic** to run `client.py` at the selected rate for 15 seconds.
 
@@ -283,19 +278,6 @@ sudo rm /dev/shm/telecom_shm
 - Ensure server is running first
 - Check shared memory permissions
 - Verify monitor can access `/dev/shm/telecom_shm`
-
-## Resume Points Demonstrated
-
-| Skill | Implementation |
-|-------|---------------|
-| **Networking/Sockets** | UDP socket creation, bind, recvfrom |
-| **Packet Parsing** | Binary structure casting, bit-level handling |
-| **Multi-threading** | Producer-consumer pattern, thread pool |
-| **IPC** | POSIX shared memory (shm_open, mmap) |
-| **Crypto/Security** | XOR encryption, checksum verification |
-| **System Programming** | System calls, signal handling, memory mapping |
-| **Performance** | Non-blocking I/O, thread-safe queues |
-| **Debugging** | strace integration, error handling |
 
 ## License
 

@@ -11,10 +11,13 @@ import time
 import sys
 import argparse
 import logging
+from datetime import datetime
 from pathlib import Path
 
 # Log to client.log in project directory (dashboard can tail this file)
-LOG_FILE = Path(__file__).resolve().parent / "client.log"
+PROJECT_DIR = Path(__file__).resolve().parent
+LOG_FILE = PROJECT_DIR / "client.log"
+SERVER_LOG = PROJECT_DIR / "server.log"
 logging.basicConfig(
     level=logging.INFO,
     format="%(asctime)s [%(levelname)s] %(message)s",
@@ -118,6 +121,14 @@ def create_invalid_packet(seq_num, payload_data, kind):
 
 # Invalid packet kinds for random drop injection (matches server drop reasons)
 INVALID_KINDS = ("magic", "checksum", "too_small", "too_large", "size_mismatch")
+# Display names for stats (order matches INVALID_KINDS)
+INVALID_DISPLAY_NAMES = {
+    "magic": "Magic word",
+    "checksum": "Checksum",
+    "too_small": "Too small",
+    "too_large": "Too large",
+    "size_mismatch": "Size mismatch",
+}
 
 
 def send_packets(host='localhost', port=8080, rate=1000, duration=None, payload_size=100, invalid_fraction=0.0):
@@ -141,6 +152,7 @@ def send_packets(host='localhost', port=8080, rate=1000, duration=None, payload_
     seq_num = 0
     packet_count = 0
     invalid_count = 0
+    invalid_counts = {k: 0 for k in INVALID_KINDS}
     start_time = time.time()
     interval = 1.0 / rate
 
@@ -162,6 +174,7 @@ def send_packets(host='localhost', port=8080, rate=1000, duration=None, payload_
                 kind = random.choice(INVALID_KINDS)
                 packet = create_invalid_packet(seq_num, payload, kind)
                 invalid_count += 1
+                invalid_counts[kind] += 1
             else:
                 packet = create_packet(seq_num, payload)
             sock.sendto(packet, (host, port))
@@ -195,15 +208,49 @@ def send_packets(host='localhost', port=8080, rate=1000, duration=None, payload_
     finally:
         elapsed_total = time.time() - start_time
         avg_rate = packet_count / elapsed_total if elapsed_total > 0 else 0
+        valid_count = packet_count - invalid_count
+        valid_pct = 100 * valid_count / packet_count if packet_count else 0
+        invalid_pct = 100 * invalid_count / packet_count if packet_count else 0
+
         logger.info("Statistics: Total sent=%s, Invalid (drop)=%s, Time=%.2fs, Avg rate=%.2f pps",
                    packet_count, invalid_count, elapsed_total, avg_rate)
         print(f"\n\nStatistics:")
         print(f"  Total packets sent: {packet_count}")
+        print(f"  Valid (good) packets: {valid_count} ({valid_pct:.2f}%)")
+        print(f"  Invalid (drop) packets: {invalid_count} ({invalid_pct:.2f}%)")
+        breakdown_str = ""
         if invalid_count > 0:
-            print(f"  Invalid (drop) packets: {invalid_count}")
+            print(f"  Invalid breakdown (% of total invalid, count/total invalid):")
+            for kind in INVALID_KINDS:
+                n = invalid_counts[kind]
+                pct_invalid = 100 * n / invalid_count
+                label = INVALID_DISPLAY_NAMES[kind]
+                print(f"    - {label}: {pct_invalid:.1f}% of invalid ({n}/{invalid_count})")
+            # Log parseable line for dashboard
+            breakdown_str = " ".join(f"{k}={v}" for k, v in invalid_counts.items())
+            logger.info("INVALID_BREAKDOWN %s", breakdown_str)
         print(f"  Total time: {elapsed_total:.2f} seconds")
         print(f"  Average rate: {avg_rate:.2f} packets/second")
         sock.close()
+
+        # Append client run statistics to server.log for future reference (combined log)
+        try:
+            with open(SERVER_LOG, "a", encoding="utf-8") as f:
+                f.write(f"\n--- Client run statistics ({datetime.now().strftime('%Y-%m-%d %H:%M:%S')}) ---\n")
+                f.write(f"  Total packets sent: {packet_count}\n")
+                f.write(f"  Valid (good): {valid_count} ({valid_pct:.2f}%)\n")
+                f.write(f"  Invalid (drop): {invalid_count} ({invalid_pct:.2f}%)\n")
+                if invalid_count > 0:
+                    f.write("  Invalid breakdown (% of total invalid, count/total):\n")
+                    for kind in INVALID_KINDS:
+                        n = invalid_counts[kind]
+                        pct = 100 * n / invalid_count
+                        label = INVALID_DISPLAY_NAMES[kind]
+                        f.write(f"    - {label}: {pct:.1f}% ({n}/{invalid_count})\n")
+                    f.write(f"  INVALID_BREAKDOWN {breakdown_str}\n")
+                f.write(f"  Time: {elapsed_total:.2f}s, Avg rate: {avg_rate:.2f} pps\n")
+        except (OSError, NameError):
+            pass  # server.log missing or not writable; ignore
 
 def main():
     parser = argparse.ArgumentParser(

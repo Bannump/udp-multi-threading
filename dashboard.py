@@ -624,11 +624,9 @@ def live_metrics_and_log():
     if log_category == "Dropped & validation only":
         render_dropped_view()
     else:
-        tab_drops, tab_server, tab_client = st.tabs(
-            ["Dropped & validation", "Server log", "Client log"]
+        tab_server, tab_client, tab_drops = st.tabs(
+            ["Server log", "Client log", "Dropped & validation"]
         )
-        with tab_drops:
-            render_dropped_view()
         with tab_server:
             filtered_server = [(ts, line) for ts, line in server_entries if keep_time(ts)]
             display_lines = []
@@ -646,6 +644,8 @@ def live_metrics_and_log():
                 display_lines.append(ts_str + line)
             client_content = html.escape("\n".join(display_lines)) if display_lines else "(no client log or no entries in time range)"
             st.markdown(f'<div class="log-box">{client_content}</div>', unsafe_allow_html=True)
+        with tab_drops:
+            render_dropped_view()
 
 
 live_metrics_and_log()

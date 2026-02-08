@@ -27,6 +27,11 @@ __pycache__/
 .venv/
 venv/
 
+# Demo/log output (saved for local reference, not for repository)
+server.log
+client.log
+monitor.log
+
 # Local documentation (not for repository)
 GITHUB_AUTH.md
 GITHUB_SETUP.md

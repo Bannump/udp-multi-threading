@@ -17,7 +17,6 @@ from pathlib import Path
 # Log to client.log in project directory (dashboard can tail this file)
 PROJECT_DIR = Path(__file__).resolve().parent
 LOG_FILE = PROJECT_DIR / "client.log"
-SERVER_LOG = PROJECT_DIR / "server.log"
 logging.basicConfig(
     level=logging.INFO,
     format="%(asctime)s [%(levelname)s] %(message)s",
@@ -233,9 +232,9 @@ def send_packets(host='localhost', port=8080, rate=1000, duration=None, payload_
         print(f"  Average rate: {avg_rate:.2f} packets/second")
         sock.close()
 
-        # Append client run statistics to server.log for future reference (combined log)
+        # Append client run statistics to client.log (shown in dashboard Client log tab)
         try:
-            with open(SERVER_LOG, "a", encoding="utf-8") as f:
+            with open(LOG_FILE, "a", encoding="utf-8") as f:
                 f.write(f"\n--- Client run statistics ({datetime.now().strftime('%Y-%m-%d %H:%M:%S')}) ---\n")
                 f.write(f"  Total packets sent: {packet_count}\n")
                 f.write(f"  Valid (good): {valid_count} ({valid_pct:.2f}%)\n")

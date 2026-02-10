@@ -616,3 +616,222 @@
 2026-02-08 13:14:17 [INFO] Sent: 20000 packets | Rate: 1618.4 pps | Time: 12.4s | Invalid (drop): 1058
 2026-02-08 13:14:18 [INFO] Statistics: Total sent=21033, Invalid (drop)=1113, Time=13.00s, Avg rate=1617.90 pps
 2026-02-08 13:14:18 [INFO] INVALID_BREAKDOWN magic=218 checksum=218 too_small=214 too_large=207 size_mismatch=256
+2026-02-09 15:45:06 [INFO] Starting packet generation:
+2026-02-09 15:45:06 [INFO]   Target: localhost:8080
+2026-02-09 15:45:06 [INFO]   Rate: 2000 packets/second
+2026-02-09 15:45:06 [INFO]   Payload size: 100 bytes
+2026-02-09 15:45:06 [INFO]   Duration: 15.0 seconds
+2026-02-09 15:45:06 [INFO]   Invalid (drop) fraction: 0.50% (magic/checksum/size)
+2026-02-09 15:45:06 [INFO]   Press Ctrl+C to stop
+2026-02-09 15:45:07 [INFO] Sent: 2000 packets | Rate: 1639.6 pps | Time: 1.2s | Invalid (drop): 7
+2026-02-09 15:45:09 [INFO] Sent: 4000 packets | Rate: 1638.1 pps | Time: 2.4s | Invalid (drop): 21
+2026-02-09 15:45:09 [INFO] Sent: 6000 packets | Rate: 2156.2 pps | Time: 2.8s | Invalid (drop): 29
+2026-02-09 15:45:10 [INFO] Sent: 8000 packets | Rate: 2003.6 pps | Time: 4.0s | Invalid (drop): 36
+2026-02-09 15:45:11 [INFO] Sent: 10000 packets | Rate: 1919.5 pps | Time: 5.2s | Invalid (drop): 48
+2026-02-09 15:45:13 [INFO] Sent: 12000 packets | Rate: 1868.7 pps | Time: 6.4s | Invalid (drop): 58
+2026-02-09 15:45:14 [INFO] Sent: 14000 packets | Rate: 1833.7 pps | Time: 7.6s | Invalid (drop): 66
+2026-02-09 15:45:15 [INFO] Sent: 16000 packets | Rate: 1808.8 pps | Time: 8.8s | Invalid (drop): 79
+2026-02-09 15:45:16 [INFO] Sent: 18000 packets | Rate: 1789.2 pps | Time: 10.1s | Invalid (drop): 88
+2026-02-09 15:45:18 [INFO] Sent: 20000 packets | Rate: 1774.2 pps | Time: 11.3s | Invalid (drop): 97
+2026-02-09 15:45:19 [INFO] Sent: 22000 packets | Rate: 1761.2 pps | Time: 12.5s | Invalid (drop): 108
+2026-02-09 15:45:20 [INFO] Sent: 24000 packets | Rate: 1750.3 pps | Time: 13.7s | Invalid (drop): 118
+2026-02-09 15:45:21 [INFO] Sent: 26000 packets | Rate: 1742.9 pps | Time: 14.9s | Invalid (drop): 129
+2026-02-09 15:45:21 [INFO] Statistics: Total sent=26136, Invalid (drop)=130, Time=15.00s, Avg rate=1742.35 pps
+2026-02-09 15:45:21 [INFO] INVALID_BREAKDOWN magic=25 checksum=30 too_small=30 too_large=26 size_mismatch=19
+2026-02-09 15:49:08 [INFO] Starting packet generation:
+2026-02-09 15:49:08 [INFO]   Target: localhost:8080
+2026-02-09 15:49:08 [INFO]   Rate: 2000 packets/second
+2026-02-09 15:49:08 [INFO]   Payload size: 100 bytes
+2026-02-09 15:49:08 [INFO]   Duration: 10.0 seconds
+2026-02-09 15:49:08 [INFO]   Invalid (drop) fraction: 5.00% (magic/checksum/size)
+2026-02-09 15:49:08 [INFO]   Press Ctrl+C to stop
+2026-02-09 15:49:09 [INFO] Sent: 2000 packets | Rate: 1642.9 pps | Time: 1.2s | Invalid (drop): 91
+2026-02-09 15:49:10 [INFO] Sent: 4000 packets | Rate: 1634.1 pps | Time: 2.4s | Invalid (drop): 203
+2026-02-09 15:49:11 [INFO] Sent: 6000 packets | Rate: 1631.6 pps | Time: 3.7s | Invalid (drop): 293
+2026-02-09 15:49:13 [INFO] Sent: 8000 packets | Rate: 1633.1 pps | Time: 4.9s | Invalid (drop): 411
+2026-02-09 15:49:14 [INFO] Sent: 10000 packets | Rate: 1637.4 pps | Time: 6.1s | Invalid (drop): 514
+2026-02-09 15:49:15 [INFO] Sent: 12000 packets | Rate: 1638.9 pps | Time: 7.3s | Invalid (drop): 619
+2026-02-09 15:49:16 [INFO] Sent: 14000 packets | Rate: 1640.4 pps | Time: 8.5s | Invalid (drop): 717
+2026-02-09 15:49:17 [INFO] Sent: 16000 packets | Rate: 1640.1 pps | Time: 9.8s | Invalid (drop): 819
+2026-02-09 15:49:18 [INFO] Statistics: Total sent=16405, Invalid (drop)=839, Time=10.00s, Avg rate=1640.47 pps
+2026-02-09 15:49:18 [INFO] INVALID_BREAKDOWN magic=190 checksum=171 too_small=170 too_large=135 size_mismatch=173
+2026-02-09 15:50:21 [INFO] Starting packet generation:
+2026-02-09 15:50:21 [INFO]   Target: localhost:8080
+2026-02-09 15:50:21 [INFO]   Rate: 2000 packets/second
+2026-02-09 15:50:21 [INFO]   Payload size: 100 bytes
+2026-02-09 15:50:21 [INFO]   Duration: 10.0 seconds
+2026-02-09 15:50:21 [INFO]   Invalid (drop) fraction: 5.00% (magic/checksum/size)
+2026-02-09 15:50:21 [INFO]   Press Ctrl+C to stop
+2026-02-09 15:50:22 [INFO] Sent: 2000 packets | Rate: 1639.3 pps | Time: 1.2s | Invalid (drop): 99
+2026-02-09 15:50:23 [INFO] Sent: 4000 packets | Rate: 1637.8 pps | Time: 2.4s | Invalid (drop): 195
+2026-02-09 15:50:23 [INFO] Sent: 6000 packets | Rate: 2176.4 pps | Time: 2.8s | Invalid (drop): 288
+2026-02-09 15:50:25 [INFO] Sent: 8000 packets | Rate: 2005.9 pps | Time: 4.0s | Invalid (drop): 385
+2026-02-09 15:50:26 [INFO] Sent: 10000 packets | Rate: 1915.9 pps | Time: 5.2s | Invalid (drop): 482
+2026-02-09 15:50:27 [INFO] Sent: 12000 packets | Rate: 1863.0 pps | Time: 6.4s | Invalid (drop): 571
+2026-02-09 15:50:28 [INFO] Sent: 14000 packets | Rate: 1826.9 pps | Time: 7.7s | Invalid (drop): 677
+2026-02-09 15:50:30 [INFO] Sent: 16000 packets | Rate: 1802.2 pps | Time: 8.9s | Invalid (drop): 785
+2026-02-09 15:50:31 [INFO] Statistics: Total sent=17843, Invalid (drop)=892, Time=10.00s, Avg rate=1784.28 pps
+2026-02-09 15:50:31 [INFO] INVALID_BREAKDOWN magic=192 checksum=161 too_small=171 too_large=175 size_mismatch=193
+2026-02-10 14:01:27 [INFO] Starting packet generation:
+2026-02-10 14:01:27 [INFO]   Target: localhost:8080
+2026-02-10 14:01:27 [INFO]   Rate: 2000 packets/second
+2026-02-10 14:01:27 [INFO]   Payload size: 100 bytes
+2026-02-10 14:01:27 [INFO]   Duration: 10.0 seconds
+2026-02-10 14:01:27 [INFO]   Invalid (drop) fraction: 5.00% (magic/checksum/size)
+2026-02-10 14:01:27 [INFO]   Press Ctrl+C to stop
+2026-02-10 14:01:28 [INFO] Sent: 2000 packets | Rate: 1545.0 pps | Time: 1.3s | Invalid (drop): 101
+2026-02-10 14:01:29 [INFO] Sent: 4000 packets | Rate: 1544.1 pps | Time: 2.6s | Invalid (drop): 195
+2026-02-10 14:01:30 [INFO] Stopping packet generation...
+2026-02-10 14:01:30 [INFO] Statistics: Total sent=5311, Invalid (drop)=276, Time=3.44s, Avg rate=1544.88 pps
+2026-02-10 14:01:30 [INFO] INVALID_BREAKDOWN magic=52 checksum=77 too_small=46 too_large=51 size_mismatch=50
+2026-02-10 14:01:32 [INFO] Starting packet generation:
+2026-02-10 14:01:32 [INFO]   Target: localhost:8080
+2026-02-10 14:01:32 [INFO]   Rate: 2000 packets/second
+2026-02-10 14:01:32 [INFO]   Payload size: 100 bytes
+2026-02-10 14:01:32 [INFO]   Duration: 10.0 seconds
+2026-02-10 14:01:32 [INFO]   Invalid (drop) fraction: 5.00% (magic/checksum/size)
+2026-02-10 14:01:32 [INFO]   Press Ctrl+C to stop
+2026-02-10 14:01:34 [INFO] Sent: 2000 packets | Rate: 1537.8 pps | Time: 1.3s | Invalid (drop): 100
+2026-02-10 14:01:35 [INFO] Sent: 4000 packets | Rate: 1528.9 pps | Time: 2.6s | Invalid (drop): 219
+2026-02-10 14:01:36 [INFO] Sent: 6000 packets | Rate: 1534.0 pps | Time: 3.9s | Invalid (drop): 320
+2026-02-10 14:01:38 [INFO] Sent: 8000 packets | Rate: 1540.8 pps | Time: 5.2s | Invalid (drop): 409
+2026-02-10 14:01:39 [INFO] Sent: 10000 packets | Rate: 1542.4 pps | Time: 6.5s | Invalid (drop): 509
+2026-02-10 14:01:40 [INFO] Sent: 12000 packets | Rate: 1542.2 pps | Time: 7.8s | Invalid (drop): 603
+2026-02-10 14:01:42 [INFO] Sent: 14000 packets | Rate: 1541.5 pps | Time: 9.1s | Invalid (drop): 692
+2026-02-10 14:01:42 [INFO] Statistics: Total sent=15419, Invalid (drop)=760, Time=10.00s, Avg rate=1541.88 pps
+2026-02-10 14:01:42 [INFO] INVALID_BREAKDOWN magic=153 checksum=148 too_small=157 too_large=155 size_mismatch=147
+2026-02-10 14:02:35 [INFO] Starting packet generation:
+2026-02-10 14:02:35 [INFO]   Target: localhost:8080
+2026-02-10 14:02:35 [INFO]   Rate: 2000 packets/second
+2026-02-10 14:02:35 [INFO]   Payload size: 100 bytes
+2026-02-10 14:02:35 [INFO]   Duration: 10.0 seconds
+2026-02-10 14:02:35 [INFO]   Invalid (drop) fraction: 5.00% (magic/checksum/size)
+2026-02-10 14:02:35 [INFO]   Press Ctrl+C to stop
+2026-02-10 14:02:37 [INFO] Sent: 2000 packets | Rate: 1544.9 pps | Time: 1.3s | Invalid (drop): 110
+2026-02-10 14:02:38 [INFO] Sent: 4000 packets | Rate: 1549.5 pps | Time: 2.6s | Invalid (drop): 220
+2026-02-10 14:02:39 [INFO] Sent: 6000 packets | Rate: 1544.9 pps | Time: 3.9s | Invalid (drop): 331
+2026-02-10 14:02:40 [INFO] Sent: 8000 packets | Rate: 1543.4 pps | Time: 5.2s | Invalid (drop): 435
+2026-02-10 14:02:42 [INFO] Sent: 10000 packets | Rate: 1541.7 pps | Time: 6.5s | Invalid (drop): 533
+2026-02-10 14:02:43 [INFO] Sent: 12000 packets | Rate: 1543.3 pps | Time: 7.8s | Invalid (drop): 630
+2026-02-10 14:02:44 [INFO] Sent: 14000 packets | Rate: 1545.3 pps | Time: 9.1s | Invalid (drop): 731
+2026-02-10 14:02:45 [INFO] Statistics: Total sent=15456, Invalid (drop)=807, Time=10.00s, Avg rate=1545.55 pps
+2026-02-10 14:02:45 [INFO] INVALID_BREAKDOWN magic=161 checksum=174 too_small=172 too_large=152 size_mismatch=148
+2026-02-10 14:03:21 [INFO] Starting packet generation:
+2026-02-10 14:03:21 [INFO]   Target: localhost:8080
+2026-02-10 14:03:21 [INFO]   Rate: 1000 packets/second
+2026-02-10 14:03:21 [INFO]   Payload size: 100 bytes
+2026-02-10 14:03:21 [INFO]   Duration: infinite
+2026-02-10 14:03:21 [INFO]   Invalid (drop) fraction: 5.00% (magic/checksum/size)
+2026-02-10 14:03:21 [INFO]   Press Ctrl+C to stop
+2026-02-10 14:03:22 [INFO] Sent: 1000 packets | Rate: 837.2 pps | Time: 1.2s | Invalid (drop): 44
+2026-02-10 14:03:24 [INFO] Sent: 2000 packets | Rate: 835.0 pps | Time: 2.4s | Invalid (drop): 82
+2026-02-10 14:03:25 [INFO] Sent: 3000 packets | Rate: 835.2 pps | Time: 3.6s | Invalid (drop): 129
+2026-02-10 14:03:26 [INFO] Sent: 4000 packets | Rate: 835.1 pps | Time: 4.8s | Invalid (drop): 174
+2026-02-10 14:03:27 [INFO] Sent: 5000 packets | Rate: 835.2 pps | Time: 6.0s | Invalid (drop): 231
+2026-02-10 14:03:28 [INFO] Sent: 6000 packets | Rate: 835.4 pps | Time: 7.2s | Invalid (drop): 289
+2026-02-10 14:03:30 [INFO] Sent: 7000 packets | Rate: 836.0 pps | Time: 8.4s | Invalid (drop): 350
+2026-02-10 14:03:31 [INFO] Sent: 8000 packets | Rate: 835.8 pps | Time: 9.6s | Invalid (drop): 398
+2026-02-10 14:03:32 [INFO] Sent: 9000 packets | Rate: 832.9 pps | Time: 10.8s | Invalid (drop): 452
+2026-02-10 14:03:33 [INFO] Sent: 10000 packets | Rate: 833.4 pps | Time: 12.0s | Invalid (drop): 500
+2026-02-10 14:03:34 [INFO] Sent: 11000 packets | Rate: 833.4 pps | Time: 13.2s | Invalid (drop): 557
+2026-02-10 14:03:35 [INFO] Stopping packet generation...
+2026-02-10 14:03:35 [INFO] Statistics: Total sent=11855, Invalid (drop)=600, Time=14.22s, Avg rate=833.45 pps
+2026-02-10 14:03:35 [INFO] INVALID_BREAKDOWN magic=120 checksum=121 too_small=123 too_large=126 size_mismatch=110
+2026-02-10 14:03:41 [INFO] Starting packet generation:
+2026-02-10 14:03:41 [INFO]   Target: localhost:8080
+2026-02-10 14:03:41 [INFO]   Rate: 2000 packets/second
+2026-02-10 14:03:41 [INFO]   Payload size: 100 bytes
+2026-02-10 14:03:41 [INFO]   Duration: 3.0 seconds
+2026-02-10 14:03:41 [INFO]   Invalid (drop) fraction: 5.00% (magic/checksum/size)
+2026-02-10 14:03:41 [INFO]   Press Ctrl+C to stop
+2026-02-10 14:03:42 [INFO] Sent: 2000 packets | Rate: 1535.1 pps | Time: 1.3s | Invalid (drop): 101
+2026-02-10 14:03:44 [INFO] Sent: 4000 packets | Rate: 1536.1 pps | Time: 2.6s | Invalid (drop): 193
+2026-02-10 14:03:44 [INFO] Statistics: Total sent=4611, Invalid (drop)=226, Time=3.00s, Avg rate=1536.84 pps
+2026-02-10 14:03:44 [INFO] INVALID_BREAKDOWN magic=45 checksum=45 too_small=43 too_large=45 size_mismatch=48
+2026-02-10 14:06:33 [INFO] Starting packet generation:
+2026-02-10 14:06:33 [INFO]   Target: localhost:8080
+2026-02-10 14:06:33 [INFO]   Rate: 2000 packets/second
+2026-02-10 14:06:33 [INFO]   Payload size: 100 bytes
+2026-02-10 14:06:33 [INFO]   Duration: 5.0 seconds
+2026-02-10 14:06:33 [INFO]   Invalid (drop) fraction: 5.00% (magic/checksum/size)
+2026-02-10 14:06:33 [INFO]   Press Ctrl+C to stop
+2026-02-10 14:06:34 [INFO] Sent: 2000 packets | Rate: 1515.1 pps | Time: 1.3s | Invalid (drop): 105
+2026-02-10 14:06:36 [INFO] Sent: 4000 packets | Rate: 1498.5 pps | Time: 2.7s | Invalid (drop): 201
+2026-02-10 14:06:37 [INFO] Sent: 6000 packets | Rate: 1501.4 pps | Time: 4.0s | Invalid (drop): 282
+2026-02-10 14:06:38 [INFO] Statistics: Total sent=7530, Invalid (drop)=360, Time=5.00s, Avg rate=1505.95 pps
+2026-02-10 14:06:38 [INFO] INVALID_BREAKDOWN magic=61 checksum=82 too_small=80 too_large=65 size_mismatch=72
+
+--- Client run statistics (2026-02-10 14:06:38) ---
+  Total packets sent: 7530
+  Valid (good): 7170 (95.22%)
+  Invalid (drop): 360 (4.78%)
+  Invalid breakdown (% of total invalid, count/total):
+    - Magic word: 16.9% (61/360)
+    - Checksum: 22.8% (82/360)
+    - Too small: 22.2% (80/360)
+    - Too large: 18.1% (65/360)
+    - Size mismatch: 20.0% (72/360)
+  INVALID_BREAKDOWN magic=61 checksum=82 too_small=80 too_large=65 size_mismatch=72
+  Time: 5.00s, Avg rate: 1505.95 pps
+2026-02-10 14:06:45 [INFO] Starting packet generation:
+2026-02-10 14:06:45 [INFO]   Target: localhost:8080
+2026-02-10 14:06:45 [INFO]   Rate: 2000 packets/second
+2026-02-10 14:06:45 [INFO]   Payload size: 100 bytes
+2026-02-10 14:06:45 [INFO]   Duration: 10.0 seconds
+2026-02-10 14:06:45 [INFO]   Invalid (drop) fraction: 5.00% (magic/checksum/size)
+2026-02-10 14:06:45 [INFO]   Press Ctrl+C to stop
+2026-02-10 14:06:47 [INFO] Sent: 2000 packets | Rate: 1542.0 pps | Time: 1.3s | Invalid (drop): 101
+2026-02-10 14:06:48 [INFO] Sent: 4000 packets | Rate: 1525.6 pps | Time: 2.6s | Invalid (drop): 185
+2026-02-10 14:06:49 [INFO] Sent: 6000 packets | Rate: 1515.2 pps | Time: 4.0s | Invalid (drop): 300
+2026-02-10 14:06:51 [INFO] Sent: 8000 packets | Rate: 1518.6 pps | Time: 5.3s | Invalid (drop): 389
+2026-02-10 14:06:52 [INFO] Sent: 10000 packets | Rate: 1523.0 pps | Time: 6.6s | Invalid (drop): 480
+2026-02-10 14:06:53 [INFO] Sent: 12000 packets | Rate: 1523.9 pps | Time: 7.9s | Invalid (drop): 598
+2026-02-10 14:06:55 [INFO] Sent: 14000 packets | Rate: 1518.6 pps | Time: 9.2s | Invalid (drop): 695
+2026-02-10 14:06:55 [INFO] Statistics: Total sent=15188, Invalid (drop)=742, Time=10.00s, Avg rate=1518.72 pps
+2026-02-10 14:06:55 [INFO] INVALID_BREAKDOWN magic=136 checksum=157 too_small=150 too_large=144 size_mismatch=155
+
+--- Client run statistics (2026-02-10 14:06:55) ---
+  Total packets sent: 15188
+  Valid (good): 14446 (95.11%)
+  Invalid (drop): 742 (4.89%)
+  Invalid breakdown (% of total invalid, count/total):
+    - Magic word: 18.3% (136/742)
+    - Checksum: 21.2% (157/742)
+    - Too small: 20.2% (150/742)
+    - Too large: 19.4% (144/742)
+    - Size mismatch: 20.9% (155/742)
+  INVALID_BREAKDOWN magic=136 checksum=157 too_small=150 too_large=144 size_mismatch=155
+  Time: 10.00s, Avg rate: 1518.72 pps
+2026-02-10 14:08:52 [INFO] Starting packet generation:
+2026-02-10 14:08:52 [INFO]   Target: localhost:8080
+2026-02-10 14:08:52 [INFO]   Rate: 2000 packets/second
+2026-02-10 14:08:52 [INFO]   Payload size: 100 bytes
+2026-02-10 14:08:52 [INFO]   Duration: 15.0 seconds
+2026-02-10 14:08:52 [INFO]   Invalid (drop) fraction: 0.50% (magic/checksum/size)
+2026-02-10 14:08:52 [INFO]   Press Ctrl+C to stop
+2026-02-10 14:08:53 [INFO] Sent: 2000 packets | Rate: 1534.2 pps | Time: 1.3s | Invalid (drop): 8
+2026-02-10 14:08:54 [INFO] Sent: 4000 packets | Rate: 1541.9 pps | Time: 2.6s | Invalid (drop): 18
+2026-02-10 14:08:55 [INFO] Sent: 6000 packets | Rate: 1537.3 pps | Time: 3.9s | Invalid (drop): 24
+2026-02-10 14:08:57 [INFO] Sent: 8000 packets | Rate: 1535.5 pps | Time: 5.2s | Invalid (drop): 32
+2026-02-10 14:08:58 [INFO] Sent: 10000 packets | Rate: 1538.0 pps | Time: 6.5s | Invalid (drop): 44
+2026-02-10 14:08:59 [INFO] Sent: 12000 packets | Rate: 1538.5 pps | Time: 7.8s | Invalid (drop): 52
+2026-02-10 14:09:01 [INFO] Sent: 14000 packets | Rate: 1539.6 pps | Time: 9.1s | Invalid (drop): 58
+2026-02-10 14:09:02 [INFO] Sent: 16000 packets | Rate: 1538.1 pps | Time: 10.4s | Invalid (drop): 66
+2026-02-10 14:09:03 [INFO] Sent: 18000 packets | Rate: 1538.0 pps | Time: 11.7s | Invalid (drop): 74
+2026-02-10 14:09:05 [INFO] Sent: 20000 packets | Rate: 1537.2 pps | Time: 13.0s | Invalid (drop): 93
+2026-02-10 14:09:06 [INFO] Sent: 22000 packets | Rate: 1535.2 pps | Time: 14.3s | Invalid (drop): 98
+2026-02-10 14:09:07 [INFO] Statistics: Total sent=23031, Invalid (drop)=107, Time=15.00s, Avg rate=1535.35 pps
+2026-02-10 14:09:07 [INFO] INVALID_BREAKDOWN magic=23 checksum=16 too_small=26 too_large=20 size_mismatch=22
+
+--- Client run statistics (2026-02-10 14:09:07) ---
+  Total packets sent: 23031
+  Valid (good): 22924 (99.54%)
+  Invalid (drop): 107 (0.46%)
+  Invalid breakdown (% of total invalid, count/total):
+    - Magic word: 21.5% (23/107)
+    - Checksum: 15.0% (16/107)
+    - Too small: 24.3% (26/107)
+    - Too large: 18.7% (20/107)
+    - Size mismatch: 20.6% (22/107)
+  INVALID_BREAKDOWN magic=23 checksum=16 too_small=26 too_large=20 size_mismatch=22
+  Time: 15.00s, Avg rate: 1535.35 pps

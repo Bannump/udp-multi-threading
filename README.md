@@ -48,44 +48,6 @@ graph TB
     SharedMem   -->|"Poll every 1 s"| Dashboard
 ```
 
----
-
-### Packet Processing Flow
-
-```mermaid
-sequenceDiagram
-    participant C  as Client (client.py)
-    participant R  as Receive Thread
-    participant Q  as Work Queue
-    participant W  as Worker Thread
-    participant SM as Shared Memory
-
-    C  ->>  C  : Build header<br/>[Magic 0xDEADBEEF | SeqNum | Len | Checksum]
-    C  ->>  C  : XOR-encrypt payload
-    C  ->>  R  : UDP datagram → port 8080
-
-    R  ->>  R  : recvfrom()
-    R  ->>  R  : Validate magic word
-    R  ->>  R  : Check size ≤ 4096 B
-    R  ->>  R  : Verify checksum
-
-    alt Validation failed
-        R  ->>  SM : dropped_packets++
-        Note over R : Packet discarded, reason logged
-    else Validation passed
-        R  ->>  Q  : Enqueue raw packet
-        W  ->>  Q  : Dequeue packet
-        W  ->>  W  : XOR-decrypt payload
-        W  ->>  W  : Process & log message
-        W  ->>  SM : packets_processed++<br/>bytes_transferred += len
-    end
-
-    loop Every 1 s
-        SM -->> SM : Monitor / Dashboard reads stats
-    end
-```
-
----
 
 ### Key Features
 

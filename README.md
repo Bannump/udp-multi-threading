@@ -14,6 +14,79 @@ A **Go implementation** is available in the `go/` directory with the same protoc
 
 ## Architecture
 
+### System Components
+
+```mermaid
+graph TB
+    Client["Client\nclient.py\nPacket Generator"]
+
+    subgraph ServerProc["Server Process  —  server.cpp / go/server/"]
+        Receiver["UDP Receive Thread\nPort 8080\nrecvfrom()"]
+        Queue["Thread-Safe Work Queue\nmutex + condition_variable"]
+        subgraph Pool["Worker Thread Pool  (4 threads)"]
+            direction LR
+            T1["Worker 1"]
+            T2["Worker 2"]
+            T3["Worker 3"]
+            T4["Worker 4"]
+        end
+    end
+
+    SharedMem[("Shared Memory\n/dev/shm/telecom_shm\nPOSIX shm_open + mmap")]
+
+    Monitor["Monitor\nmonitor.cpp\nCLI Stats Viewer"]
+    Dashboard["Dashboard\ndashboard.py\nStreamlit SRE Panel"]
+
+    Client      -->|"Encrypted UDP packets\nPort 8080"| Receiver
+    Receiver    -->|"Enqueue validated packet"| Queue
+    Queue       -->|"Dequeue"| T1
+    Queue       -->|"Dequeue"| T2
+    Queue       -->|"Dequeue"| T3
+    Queue       -->|"Dequeue"| T4
+    T1 & T2 & T3 & T4 -->|"Atomic stat update"| SharedMem
+    SharedMem   -->|"Poll every 1 s"| Monitor
+    SharedMem   -->|"Poll every 1 s"| Dashboard
+```
+
+---
+
+### Packet Processing Flow
+
+```mermaid
+sequenceDiagram
+    participant C  as Client (client.py)
+    participant R  as Receive Thread
+    participant Q  as Work Queue
+    participant W  as Worker Thread
+    participant SM as Shared Memory
+
+    C  ->>  C  : Build header<br/>[Magic 0xDEADBEEF | SeqNum | Len | Checksum]
+    C  ->>  C  : XOR-encrypt payload
+    C  ->>  R  : UDP datagram → port 8080
+
+    R  ->>  R  : recvfrom()
+    R  ->>  R  : Validate magic word
+    R  ->>  R  : Check size ≤ 4096 B
+    R  ->>  R  : Verify checksum
+
+    alt Validation failed
+        R  ->>  SM : dropped_packets++
+        Note over R : Packet discarded, reason logged
+    else Validation passed
+        R  ->>  Q  : Enqueue raw packet
+        W  ->>  Q  : Dequeue packet
+        W  ->>  W  : XOR-decrypt payload
+        W  ->>  W  : Process & log message
+        W  ->>  SM : packets_processed++<br/>bytes_transferred += len
+    end
+
+    loop Every 1 s
+        SM -->> SM : Monitor / Dashboard reads stats
+    end
+```
+
+---
+
 ### Key Features
 
 - **Custom Protocol**: Packed binary packet structure with magic word, sequence numbers, and checksums
